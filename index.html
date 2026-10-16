@@ -358,6 +358,11 @@ h2{font-size:clamp(27px,4.2vw,40px);line-height:1.15;margin-bottom:14px;max-widt
 .item .p{font-family:'Lora',serif;font-weight:700;font-size:15.5px;white-space:nowrap}
 .item .x{border:0;background:transparent;color:#b0a699;cursor:pointer;font-size:16px;padding:0 2px}
 .campo{margin-top:14px}
+.chk{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--linea);border-radius:12px;padding:12px 13px;cursor:pointer;margin:0}
+.chk input{width:auto;margin-top:3px;accent-color:var(--vino);flex:0 0 auto}
+.chk b{display:block;font-size:14.5px}
+.chk span{font-size:12.5px;color:var(--texto);line-height:1.45;font-weight:500}
+.chk:has(input:checked){border-color:var(--vino);background:#fdf6f6}
 .campo.dos{display:grid;grid-template-columns:1fr 1.7fr;gap:10px}
 .panel input.falta{border-color:var(--vino);background:#fdf1f1}
 .nota.avis{color:var(--vino);font-weight:600;margin:0 0 10px}
@@ -542,6 +547,7 @@ footer a:hover{color:#fff}
         <li><span class="tick">✓</span><span style="color:var(--texto)">Todo envasado al vacío, pieza a pieza.</span></li>
         <li><span class="tick">✓</span><span style="color:var(--texto)">Transporte refrigerado entre 2 y 8 grados, entrega en 24-48 horas.</span></li>
         <li><span class="tick">✓</span><span style="color:var(--texto)">Salidas de lunes a jueves, para que nada pase el fin de semana en camino.</span></li>
+        <li><span class="tick">✓</span><span style="color:var(--texto)">¿Lo quieres recibir en sábado? Se puede, con un suplemento de 10 € por el envío.</span></li>
       </ul>
     </div>
     <img class="rv" src="murciano-fotos/45e25bbaf6.webp" width="820" height="896" loading="lazy" decoding="async" alt="Chuletones envasados al vacío listos para enviar">
@@ -660,7 +666,7 @@ footer a:hover{color:#fff}
     <h4>1. Vendedor</h4>
     <p>Antonio Monserrate Azorín (Carnicería El Murciano), NIF 46080455R, Avenida de Elche, 1 · 03400 Villena (Alicante). Teléfono y WhatsApp 678 34 60 26.</p>
     <h4>2. Productos y precios</h4>
-    <p>Vendemos packs y cestas de precio cerrado. Los precios están en euros e incluyen el IVA, y el envío es gratis. Las fotos son orientativas: el contenido de cada pack es el de su descripción. Si en algún momento nos falta un producto, te avisamos antes y te proponemos un cambio o anular el pedido. En la cesta a medida te damos el precio por WhatsApp antes de prepararla.</p>
+    <p>Vendemos packs y cestas de precio cerrado. Los precios están en euros e incluyen el IVA, y el envío es gratis, salvo la entrega en sábado, que tiene un suplemento de 10 €. Las fotos son orientativas: el contenido de cada pack es el de su descripción. Si en algún momento nos falta un producto, te avisamos antes y te proponemos un cambio o anular el pedido. En la cesta a medida te damos el precio por WhatsApp antes de prepararla.</p>
     <h4>3. Cómo se hace el pedido</h4>
     <p>Eliges los packs en la web y nos mandas el pedido por WhatsApp. El pedido queda cerrado cuando te contestamos confirmándolo; hasta entonces no hay ningún compromiso para ninguna de las dos partes.</p>
     <h4>4. Pago</h4>
@@ -668,7 +674,7 @@ footer a:hover{color:#fff}
     <h4>5. Recogida en la tienda</h4>
     <p>En Avenida de Elche, 1, a la hora que acordemos y dentro del horario de apertura. Los pedidos que se recogen en la tienda incluyen un regalo.</p>
     <h4>6. Envíos</h4>
-    <p>Envío gratis a toda España. Los productos van envasados al vacío y en transporte refrigerado, entre 2 y 8 grados. Hacemos los envíos de lunes a jueves para que nada pase el fin de semana en camino, y llegan en 24-48 horas desde que salen. Para que todo vaya bien, indica la dirección completa y un teléfono, y guarda los productos en la nevera nada más recibirlos.</p>
+    <p>Envío gratis a toda España. Los productos van envasados al vacío y en transporte refrigerado, entre 2 y 8 grados. Hacemos los envíos de lunes a jueves para que nada pase el fin de semana en camino, y llegan en 24-48 horas desde que salen. El envío es gratis de lunes a viernes; si quieres recibirlo en sábado, tiene un suplemento de 10 € por pedido, que se suma al total. Para que todo vaya bien, indica la dirección completa y un teléfono, y guarda los productos en la nevera nada más recibirlos.</p>
     <h4>7. Si algo llega mal</h4>
     <p>Si un producto llega en mal estado o el pedido no es correcto, avísanos por WhatsApp en las 24 horas siguientes a recibirlo, con una foto, y te lo cambiamos o te devolvemos el dinero. Esto no limita los derechos que te da la ley como consumidor.</p>
     <h4>8. Devoluciones (derecho de desistimiento)</h4>
@@ -703,6 +709,9 @@ footer a:hover{color:#fff}
         <div><label for="f-loc">Localidad y provincia</label>
           <input id="f-loc" type="text" placeholder="Ej.: Getafe, Madrid" autocomplete="address-level2"></div>
       </div>
+      <div class="campo" id="c-sab" hidden>
+        <label class="chk" for="f-sab"><input type="checkbox" id="f-sab">
+          <span><b>Quiero que llegue en sábado</b>Suplemento de 10 € por el envío en sábado.</span></label></div>
       <div class="campo"><label for="f-dia">¿Para cuándo?</label>
         <input id="f-dia" type="text" placeholder="Ej.: el sábado por la mañana"></div>
       <div class="campo"><label for="f-nom">Tu nombre</label>
@@ -774,7 +783,7 @@ var PACKS=[
 ];
 var MODOS=[
  {k:'recoger',b:'Recojo en la tienda',g:'con regalo',s:'Avenida de Elche, 1. Preparado a la hora que nos digas, y te llevas un regalo.'},
- {k:'envio',b:'Envío gratis a toda España',s:'Al vacío y en frío, entrega en 24-48 h. Salidas de lunes a jueves.'}
+ {k:'envio',b:'Envío gratis a toda España',s:'Al vacío y en frío, entrega en 24-48 h. Salidas de lunes a jueves. Entrega en sábado: +10 €.'}
 ];
 
 var cat=CATS[0], car=[], tmp={}, modo='recoger';
@@ -841,9 +850,12 @@ function anadir(i){
 function quitar(k){car.splice(k,1);refCar()}
 function totalCar(){return car.reduce(function(s,x){return s+(PACKS[x.i].p||0)*x.q},0)}
 function faltaPrecio(){return car.some(function(x){return PACKS[x.i].p==null})}
-function txtTotal(){return faltaPrecio()?'Por confirmar':eur(totalCar())}
+var SUPL_SAB=10;
+function sabado(){var e=document.getElementById('f-sab');return modo!=='recoger'&&!!(e&&e.checked)}
+function totalPedido(){return totalCar()+(sabado()?SUPL_SAB:0)}
+function txtTotal(){return faltaPrecio()?'Por confirmar':eur(totalPedido())}
 function refCar(){
-  var n=car.length,t=totalCar();
+  var n=car.length,t=totalPedido();
   document.getElementById('pill').textContent=n;
   document.getElementById('tot').textContent=txtTotal();
   document.getElementById('fabt').textContent=(faltaPrecio()?n+(n===1?' pack':' packs'):eur(t));
@@ -867,6 +879,8 @@ function pintaModos(){
       document.getElementById('f-dir').hidden=!hay;
       document.getElementById('l-dir').hidden=!hay;
       document.getElementById('c-cp').hidden=!hay;
+      document.getElementById('c-sab').hidden=!hay;
+      refCar();
       document.getElementById('l-dir').textContent='Dirección de envío';
     })});
 }
@@ -890,7 +904,8 @@ document.getElementById('enviar').addEventListener('click',function(){
   var t='Hola El Murciano, quiero hacer un pedido 👋\n\n— MI PEDIDO —\n';
   car.forEach(function(x){var p=PACKS[x.i];
     t+='• '+x.q+' × '+p.n+(p.p==null?'':' — '+eur(p.p*x.q))+(p.r?' (regalo: '+p.r+')':'')+'\n'});
-  t+='\nTOTAL: '+txtTotal()+'\n\nEntrega: '+m.b+(m.g?' ('+m.g+')':'')+'\n';
+  if(sabado()) t+='• Entrega en sábado — '+eur(SUPL_SAB)+'\n';
+  t+='\nTOTAL: '+txtTotal()+'\n\nEntrega: '+(sabado()?'Envío en sábado (suplemento de 10 €)':m.b)+(m.g?' ('+m.g+')':'')+'\n';
   if(modo!=='recoger') t+='Dirección: '+v('f-dir')+'\nCP y localidad: '+v('f-cp')+' '+v('f-loc')+'\n';
   if(v('f-dia')) t+='Para cuándo: '+v('f-dia')+'\n';
   if(v('f-nom')) t+='Nombre: '+v('f-nom')+'\n';
@@ -901,6 +916,7 @@ document.getElementById('enviar').addEventListener('click',function(){
 });
 
 pintaCats();pinta();pintaNav();pintaModos();refCar();
+document.getElementById('f-sab').addEventListener('change',refCar);
 
 /* horario: marca el día de hoy y dice si está abierto ahora */
 (function(){
