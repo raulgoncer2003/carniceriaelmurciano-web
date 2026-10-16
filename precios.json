@@ -1,0 +1,95 @@
+{
+ "packs": {
+  "semanal": {
+   "n": "Pack Semanal",
+   "p": 39.99,
+   "c": "Para la semana"
+  },
+  "familiar": {
+   "n": "Pack Familiar",
+   "p": 49.99,
+   "c": "Para la semana"
+  },
+  "pollo": {
+   "n": "Pack de Pollo Económico",
+   "p": 49.99,
+   "c": "Para la semana"
+  },
+  "variado": {
+   "n": "Pack Variado",
+   "p": 59.99,
+   "c": "Para la semana"
+  },
+  "ahorro": {
+   "n": "Pack Ahorro Familiar",
+   "p": 65.99,
+   "c": "Para la semana"
+  },
+  "plancha": {
+   "n": "Pack Plancha",
+   "p": 54.99,
+   "c": "Barbacoa y plancha"
+  },
+  "barbacoa": {
+   "n": "Pack Barbacoa",
+   "p": 49.99,
+   "c": "Barbacoa y plancha"
+  },
+  "angus": {
+   "n": "Pack Barbacoa Angus",
+   "p": 149.99,
+   "c": "Barbacoa y plancha"
+  },
+  "hamburguesas": {
+   "n": "Pack Hamburguesas",
+   "p": 33.99,
+   "c": "Barbacoa y plancha"
+  },
+  "embutido": {
+   "n": "Pack Embutido",
+   "p": 29.99,
+   "c": "Embutido y jamones"
+  },
+  "jamon": {
+   "n": "Jamón Económico",
+   "p": 74.99,
+   "c": "Embutido y jamones"
+  },
+  "duroc": {
+   "n": "Jamón 50% Duroc",
+   "p": 94.99,
+   "c": "Embutido y jamones"
+  },
+  "iberico": {
+   "n": "Jamón 50% Cebo Ibérico",
+   "p": 209.99,
+   "c": "Embutido y jamones"
+  },
+  "cestasidra": {
+   "n": "Cesta de Embutido con Sidra",
+   "p": 30.0,
+   "c": "Navidad"
+  },
+  "cestavino": {
+   "n": "Cesta de Embutido con Vino",
+   "p": 32.0,
+   "c": "Navidad"
+  },
+  "cestajamon": {
+   "n": "Cesta con Jamón",
+   "p": 105.0,
+   "c": "Navidad"
+  },
+  "cestaduroc": {
+   "n": "Cesta con Jamón Duroc 50%",
+   "p": 125.0,
+   "c": "Navidad"
+  },
+  "cestaiberico": {
+   "n": "Cesta de Ibéricos",
+   "p": 240.0,
+   "c": "Navidad"
+  }
+ },
+ "sabado": 10.0
+}
