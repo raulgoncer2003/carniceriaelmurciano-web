@@ -92,6 +92,19 @@ img{display:block;max-width:100%}
 @media(max-width:980px){.packs.nvg .pack{flex-basis:calc((100% - 18px)/2)}}
 @media(max-width:640px){.packs.nvg .pack{flex-basis:100%}}
 
+/* pago con tarjeta */
+.solo-tarjeta{display:none !important}
+html.tarjeta .solo-tarjeta{display:block !important}
+html.tarjeta span.solo-tarjeta{display:inline !important}
+html.tarjeta .sin-tarjeta{display:none !important}
+.pg-in{width:min(440px,100%);height:auto !important}
+.pg-body{padding:26px 24px 24px;text-align:center}
+.pg-ok{width:64px;height:64px;border-radius:50%;background:var(--verde);color:#fff;font-size:32px;line-height:64px;margin:0 auto 14px;font-weight:700}
+.pg-ok.mal{background:var(--vino)}
+.pg-body p{color:var(--texto);font-size:15px;margin-bottom:16px}
+.pg-body .btn{width:100%}
+@media(max-width:640px){.legal .pg-in{height:auto;border-radius:18px;margin:16px}}
+
 /* textos legales */
 .flegal{display:flex;gap:14px;flex-wrap:wrap}
 .flegal a{text-decoration:underline;text-underline-offset:3px}
@@ -646,7 +659,7 @@ footer a:hover{color:#fff}
     <h4>Responsable</h4>
     <p>Antonio Monserrate Azorín (Carnicería El Murciano), NIF 46080455R, Avenida de Elche, 1 · 03400 Villena (Alicante). Teléfono y WhatsApp 678 34 60 26.</p>
     <h4>Qué datos tratamos y cómo nos llegan</h4>
-    <p>Los que escribes al preparar un pedido o pedir una cesta a medida (nombre, teléfono, dirección de entrega, fecha y notas) y los que nos mandes por WhatsApp o por teléfono. La web no guarda tus datos: al pulsar el botón de enviar se abre tu WhatsApp con el mensaje ya escrito y eres tú quien decide mandarlo.</p>
+    <p>Los que escribes al preparar un pedido o pedir una cesta a medida (nombre, teléfono, dirección de entrega, fecha y notas) y los que nos mandes por WhatsApp o por teléfono. La web no guarda tus datos: al pulsar el botón de enviar se abre tu WhatsApp con el mensaje ya escrito y eres tú quien decide mandarlo.<span class="solo-tarjeta" style="display:inline"> Si pagas con tarjeta, esos datos y tu correo pasan a Stripe para hacer el cobro.</span></p>
     <h4>Para qué los usamos</h4>
     <p>Para preparar y entregar tu pedido, hablar contigo sobre él y cumplir nuestras obligaciones fiscales y contables. No los usamos para enviarte publicidad.</p>
     <h4>Base legal</h4>
@@ -654,7 +667,7 @@ footer a:hover{color:#fff}
     <h4>Cuánto tiempo los guardamos</h4>
     <p>El tiempo necesario para gestionar el pedido y, después, durante los plazos que exige la ley, por ejemplo en materia fiscal.</p>
     <h4>Quién más los ve</h4>
-    <p>En los envíos, la empresa de transporte recibe el nombre, la dirección y el teléfono de entrega. No cedemos tus datos a nadie más, salvo obligación legal. Los mensajes de WhatsApp los trata WhatsApp (Meta) según su propia política de privacidad. La web está alojada en GitHub, que puede registrar datos técnicos de la conexión, como la dirección IP, para poder mostrarla; esos datos pueden tratarse fuera de la Unión Europea con las garantías que prevé el Reglamento.</p>
+    <p>En los envíos, la empresa de transporte recibe el nombre, la dirección y el teléfono de entrega. No cedemos tus datos a nadie más, salvo obligación legal. Los mensajes de WhatsApp los trata WhatsApp (Meta) según su propia política de privacidad.<span class="solo-tarjeta" style="display:inline"> Si pagas con tarjeta, el pago lo gestiona Stripe (Stripe Payments Europe, Ltd., Irlanda), que recibe los datos necesarios para cobrar (nombre, correo, teléfono, dirección y datos de la tarjeta); nosotros no vemos ni guardamos los datos de tu tarjeta.</span> La web está alojada en GitHub, que puede registrar datos técnicos de la conexión, como la dirección IP, para poder mostrarla; esos datos pueden tratarse fuera de la Unión Europea con las garantías que prevé el Reglamento.</p>
     <h4>Tus derechos</h4>
     <p>Puedes pedir el acceso, la rectificación o la supresión de tus datos, oponerte a su uso, limitarlo o pedir su portabilidad escribiéndonos por WhatsApp, por correo o en la propia tienda. Si crees que no los tratamos bien, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).</p>
     <h4>Cookies</h4>
@@ -668,9 +681,10 @@ footer a:hover{color:#fff}
     <h4>2. Productos y precios</h4>
     <p>Vendemos packs y cestas de precio cerrado. Los precios están en euros e incluyen el IVA, y el envío es gratis, salvo la entrega en sábado, que tiene un suplemento de 10 €. Las fotos son orientativas: el contenido de cada pack es el de su descripción. Si en algún momento nos falta un producto, te avisamos antes y te proponemos un cambio o anular el pedido. En la cesta a medida te damos el precio por WhatsApp antes de prepararla.</p>
     <h4>3. Cómo se hace el pedido</h4>
-    <p>Eliges los packs en la web y nos mandas el pedido por WhatsApp. El pedido queda cerrado cuando te contestamos confirmándolo; hasta entonces no hay ningún compromiso para ninguna de las dos partes.</p>
+    <p>Eliges los packs en la web y nos mandas el pedido por WhatsApp<span class="solo-tarjeta" style="display:inline">, o lo pagas con tarjeta</span>. Si no lo has pagado, el pedido queda cerrado cuando te contestamos confirmándolo; hasta entonces no hay ningún compromiso para ninguna de las dos partes.</p>
     <h4>4. Pago</h4>
-    <p>Por la web no se paga nada. Si recoges en la tienda, pagas al recogerlo. Si es un envío, al confirmar el pedido te indicamos cómo pagar y lo enviamos cuando recibimos el pago.</p>
+    <p class="sin-tarjeta">Por la web no se paga nada. Si recoges en la tienda, pagas al recogerlo. Si es un envío, al confirmar el pedido te indicamos cómo pagar y lo enviamos cuando recibimos el pago.</p>
+    <p class="solo-tarjeta">Los envíos se pagan con tarjeta al hacer el pedido, a través de Stripe, una plataforma de pago segura: nosotros no vemos ni guardamos los datos de tu tarjeta. Si recoges en la tienda, puedes elegir pagar con tarjeta en la web o pagar en la tienda al recogerlo. El pedido queda confirmado cuando se completa el pago; si por cualquier motivo no pudiéramos servirlo, te devolvemos el importe completo.</p>
     <h4>5. Recogida en la tienda</h4>
     <p>En Avenida de Elche, 1, a la hora que acordemos y dentro del horario de apertura. Los pedidos que se recogen en la tienda incluyen un regalo.</p>
     <h4>6. Envíos</h4>
@@ -693,6 +707,17 @@ footer a:hover{color:#fff}
  </div>
 </div>
 
+<div class="legal" id="pagado" role="dialog" aria-modal="true" aria-label="Pedido pagado" hidden>
+ <div class="lg-in pg-in">
+  <div class="lg-h"><b id="pg-tit">Pedido pagado</b><button class="cerrar" type="button" onclick="document.getElementById('pagado').hidden=true;document.body.style.overflow=''" aria-label="Cerrar">✕</button></div>
+  <div class="pg-body">
+   <div class="pg-ok" id="pg-ico">✓</div>
+   <p id="pg-txt">Hemos recibido el pago.</p>
+   <button class="btn btn-g" id="pg-wa" type="button">Avisar por WhatsApp</button>
+   <p class="nota">Mándanos el resumen por WhatsApp para que podamos prepararlo. Te llegará también el recibo al correo.</p>
+  </div>
+ </div>
+</div>
 <div class="back" id="back" onclick="cerrar()"></div>
 
 <aside class="panel" id="panel" aria-label="Mi pedido">
@@ -712,6 +737,12 @@ footer a:hover{color:#fff}
       <div class="campo" id="c-sab" hidden>
         <label class="chk" for="f-sab"><input type="checkbox" id="f-sab">
           <span><b>Quiero que llegue en sábado</b>Suplemento de 10 € por el envío en sábado.</span></label></div>
+      <div class="campo" id="c-pago" hidden><label>¿Cómo quieres pagar?</label><div class="opts">
+        <label class="opt on" data-p="tarjeta"><input type="radio" name="pago" value="tarjeta" checked>
+          <span><b>Pagar ahora con tarjeta</b><span>Tarjeta, Apple Pay o Google Pay, en la página segura de Stripe.</span></span></label>
+        <label class="opt" data-p="tienda"><input type="radio" name="pago" value="tienda">
+          <span><b>Pagar en la tienda al recoger</b><span>Nos llega el pedido por WhatsApp y pagas cuando vengas.</span></span></label>
+      </div></div>
       <div class="campo"><label for="f-dia">¿Para cuándo?</label>
         <input id="f-dia" type="text" placeholder="Ej.: el sábado por la mañana"></div>
       <div class="campo"><label for="f-nom">Tu nombre</label>
@@ -726,13 +757,17 @@ footer a:hover{color:#fff}
     <div class="total"><span>Total</span><b id="tot">0,00 €</b></div>
     <button class="btn btn-g" id="enviar">Enviar pedido por WhatsApp</button>
     <p class="nota avis" id="f-aviso" hidden>Rellena los campos marcados en rojo.</p>
-    <p class="nota"><b>Ahora no pagas nada.</b> Se abre tu WhatsApp con el pedido ya escrito; te lo confirmamos y te decimos cómo pagar. Si recoges en la tienda, puedes pagar allí. Al enviarlo aceptas las <a href="#condiciones">condiciones de compra</a> y la <a href="#privacidad">política de privacidad</a>.</p>
+    <p class="nota solo-tarjeta" id="nota-tarjeta"><b>Pago seguro con Stripe.</b> Pagas con tarjeta, Apple Pay o Google Pay y, al terminar, te enseñamos el resumen para avisarnos por WhatsApp. Al pagar aceptas las <a href="#condiciones">condiciones de compra</a> y la <a href="#privacidad">política de privacidad</a>.</p>
+    <p class="nota" id="nota-whatsapp"><b>Ahora no pagas nada.</b> Se abre tu WhatsApp con el pedido ya escrito; te lo confirmamos y te decimos cómo pagar. Si recoges en la tienda, puedes pagar allí. Al enviarlo aceptas las <a href="#condiciones">condiciones de compra</a> y la <a href="#privacidad">política de privacidad</a>.</p>
   </div>
 </aside>
 
 <script>
 document.documentElement.classList.add('js');
 var TEL='34678346026';
+/* Dirección del cobro con Stripe (Cloudflare Worker). Vacía = sin pago con tarjeta, todo por WhatsApp. */
+var PAGO_URL='https://murciano-pago.raulgoncer2003.workers.dev';
+if(PAGO_URL)document.documentElement.classList.add('tarjeta');
 
 /* =====================================================================
    PACKS — nombres, contenido y precios de EJEMPLO. Cambiar por los reales.
@@ -850,12 +885,17 @@ function anadir(i){
 function quitar(k){car.splice(k,1);refCar()}
 function totalCar(){return car.reduce(function(s,x){return s+(PACKS[x.i].p||0)*x.q},0)}
 function faltaPrecio(){return car.some(function(x){return PACKS[x.i].p==null})}
-var SUPL_SAB=10;
+var SUPL_SAB=10, pago='tarjeta';
+function usaTarjeta(){return !!PAGO_URL&&(modo!=='recoger'||pago==='tarjeta')}
 function sabado(){var e=document.getElementById('f-sab');return modo!=='recoger'&&!!(e&&e.checked)}
 function totalPedido(){return totalCar()+(sabado()?SUPL_SAB:0)}
 function txtTotal(){return faltaPrecio()?'Por confirmar':eur(totalPedido())}
 function refCar(){
-  var n=car.length,t=totalPedido();
+  var n=car.length,t=totalPedido(),tj=usaTarjeta();
+  document.getElementById('enviar').textContent=tj?'Pagar con tarjeta · '+txtTotal():'Enviar pedido por WhatsApp';
+  document.getElementById('nota-tarjeta').hidden=!tj;
+  document.getElementById('nota-whatsapp').hidden=tj;
+  document.getElementById('c-pago').hidden=!(PAGO_URL&&modo==='recoger');
   document.getElementById('pill').textContent=n;
   document.getElementById('tot').textContent=txtTotal();
   document.getElementById('fabt').textContent=(faltaPrecio()?n+(n===1?' pack':' packs'):eur(t));
@@ -872,7 +912,7 @@ function pintaModos(){
     return '<label class="opt'+(m.k===modo?' on':'')+'" data-k="'+m.k+'">'
       +'<input type="radio" name="modo" value="'+m.k+'"'+(m.k===modo?' checked':'')+'>'
       +'<span><b>'+m.b+(m.g?' <span class="tagr">'+m.g+'</span>':'')+'</b><span>'+m.s+'</span></span></label>'}).join('');
-  [].forEach.call(document.querySelectorAll('.opt'),function(o){
+  [].forEach.call(document.querySelectorAll('#modos .opt'),function(o){
     o.addEventListener('click',function(){
       modo=o.dataset.k;pintaModos();
       var hay=(modo!=='recoger');
@@ -889,31 +929,85 @@ function abrir(){document.getElementById('panel').classList.add('on');
 function cerrar(){document.getElementById('panel').classList.remove('on');
   document.getElementById('back').classList.remove('on');document.body.style.overflow=''}
 
+function vv(id){var e=document.getElementById(id);return e?(e.value||'').trim():''}
+function datosPedido(){
+  return {items:car.map(function(x){return {i:x.i,k:PACKS[x.i].k,q:x.q}}),modo:modo,sabado:sabado(),
+    dir:vv('f-dir'),cp:vv('f-cp'),loc:vv('f-loc'),dia:vv('f-dia'),nombre:vv('f-nom'),tel:vv('f-tel'),notas:vv('f-obs')};
+}
+function textoPedido(d,ref){
+  var m=MODOS.filter(function(x){return x.k===d.modo})[0], tot=0;
+  var t='Hola El Murciano, '+(ref?'acabo de pagar un pedido en la web 👋':'quiero hacer un pedido 👋')+'\n\n— MI PEDIDO —\n';
+  d.items.forEach(function(x){var p=PACKS[x.i];tot+=(p.p||0)*x.q;
+    t+='• '+x.q+' × '+p.n+(p.p==null?'':' — '+eur(p.p*x.q))+(p.r?' (regalo: '+p.r+')':'')+'\n'});
+  if(d.sabado){t+='• Entrega en sábado — '+eur(SUPL_SAB)+'\n';tot+=SUPL_SAB}
+  var falta=d.items.some(function(x){return PACKS[x.i].p==null});
+  t+='\nTOTAL: '+(falta?'Por confirmar':eur(tot))+(ref?' · PAGADO CON TARJETA (ref. '+ref+')':'')+'\n\nEntrega: '+(d.sabado?'Envío en sábado (suplemento de 10 €)':m.b)+(m.g?' ('+m.g+')':'')+'\n';
+  if(d.modo!=='recoger') t+='Dirección: '+d.dir+'\nCP y localidad: '+d.cp+' '+d.loc+'\n';
+  if(d.dia) t+='Para cuándo: '+d.dia+'\n';
+  if(d.nombre) t+='Nombre: '+d.nombre+'\n';
+  if(d.tel) t+='Teléfono: '+d.tel+'\n';
+  if(d.notas) t+='\nNotas: '+d.notas+'\n';
+  return t+'\n(Pedido hecho desde la web)';
+}
+function abreWA(t){window.open('https://wa.me/'+TEL+'?text='+encodeURIComponent(t),'_blank')}
+function guarda(d){try{sessionStorage.setItem('murciano_pedido',JSON.stringify(d))}catch(e){}}
+function recupera(){try{return JSON.parse(sessionStorage.getItem('murciano_pedido')||'null')}catch(e){return null}}
+function olvida(){try{sessionStorage.removeItem('murciano_pedido')}catch(e){}}
+function aviso(txt){var a=document.getElementById('f-aviso');a.textContent=txt;a.hidden=!txt}
+
 document.getElementById('enviar').addEventListener('click',function(){
   if(!car.length)return;
-  function v(id){var e=document.getElementById(id);return e?(e.value||'').trim():''}
   var falta=[];
-  function pide(id,re){var e=document.getElementById(id),ok=re?re.test(v(id)):!!v(id);
+  function pide(id,re){var e=document.getElementById(id),ok=re?re.test(vv(id)):!!vv(id);
     e.classList.toggle('falta',!ok);if(!ok)falta.push(e)}
   ['f-nom','f-dir','f-cp','f-loc'].forEach(function(id){document.getElementById(id).classList.remove('falta')});
   pide('f-nom');
   if(modo!=='recoger'){pide('f-dir');pide('f-cp',/^\d{5}$/);pide('f-loc')}
-  document.getElementById('f-aviso').hidden=!falta.length;
+  aviso(falta.length?'Rellena los campos marcados en rojo.':'');
   if(falta.length){falta[0].scrollIntoView({block:'center',behavior:'smooth'});falta[0].focus({preventScroll:true});return}
-  var m=MODOS.filter(function(x){return x.k===modo})[0];
-  var t='Hola El Murciano, quiero hacer un pedido 👋\n\n— MI PEDIDO —\n';
-  car.forEach(function(x){var p=PACKS[x.i];
-    t+='• '+x.q+' × '+p.n+(p.p==null?'':' — '+eur(p.p*x.q))+(p.r?' (regalo: '+p.r+')':'')+'\n'});
-  if(sabado()) t+='• Entrega en sábado — '+eur(SUPL_SAB)+'\n';
-  t+='\nTOTAL: '+txtTotal()+'\n\nEntrega: '+(sabado()?'Envío en sábado (suplemento de 10 €)':m.b)+(m.g?' ('+m.g+')':'')+'\n';
-  if(modo!=='recoger') t+='Dirección: '+v('f-dir')+'\nCP y localidad: '+v('f-cp')+' '+v('f-loc')+'\n';
-  if(v('f-dia')) t+='Para cuándo: '+v('f-dia')+'\n';
-  if(v('f-nom')) t+='Nombre: '+v('f-nom')+'\n';
-  if(v('f-tel')) t+='Teléfono: '+v('f-tel')+'\n';
-  if(v('f-obs')) t+='\nNotas: '+v('f-obs')+'\n';
-  t+='\n(Pedido hecho desde la web)';
-  window.open('https://wa.me/'+TEL+'?text='+encodeURIComponent(t),'_blank');
+  var d=datosPedido();
+  if(!usaTarjeta()){abreWA(textoPedido(d));return}
+  var b=this; b.disabled=true; b.textContent='Preparando el pago…'; guarda(d);
+  fetch(PAGO_URL+'/pago',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({items:d.items.map(function(x){return {k:x.k,q:x.q}}),modo:d.modo,sabado:d.sabado,
+      dir:d.dir,cp:d.cp,loc:d.loc,dia:d.dia,nombre:d.nombre,tel:d.tel,notas:d.notas})})
+  .then(function(r){return r.json().then(function(j){if(!r.ok||!j.url)throw new Error(j.error||'');return j})})
+  .then(function(j){location.href=j.url})
+  .catch(function(e){b.disabled=false;refCar();
+    aviso((e.message||'No se ha podido preparar el pago.')+' Si quieres, cambia a pagar en la tienda o escríbenos por WhatsApp.')});
 });
+
+[].forEach.call(document.querySelectorAll('#c-pago .opt'),function(o){
+  o.addEventListener('click',function(){pago=o.dataset.p;
+    [].forEach.call(document.querySelectorAll('#c-pago .opt'),function(x){x.classList.toggle('on',x===o)});refCar()})});
+
+/* vuelta de Stripe: ?pagado=cs_… o ?cancelado=1 */
+(function(){
+  if(!PAGO_URL)return;
+  var q=new URLSearchParams(location.search), id=q.get('pagado'), d=recupera();
+  if(!id&&!q.get('cancelado'))return;
+  history.replaceState(null,'',location.pathname+location.hash);
+  if(q.get('cancelado')){
+    if(d){car=d.items.map(function(x){return {i:x.i,q:x.q}});modo=d.modo;pintaModos();
+      ['dir','cp','loc','dia','nombre','tel','notas'].forEach(function(k){var e=document.getElementById({dir:'f-dir',cp:'f-cp',loc:'f-loc',dia:'f-dia',nombre:'f-nom',tel:'f-tel',notas:'f-obs'}[k]);if(e)e.value=d[k]||''});
+      document.getElementById('f-sab').checked=!!d.sabado;
+      ['f-dir','l-dir','c-cp','c-sab'].forEach(function(x){document.getElementById(x).hidden=d.modo==='recoger'});
+      refCar();abrir();aviso('No se ha hecho ningún cobro. Tu pedido sigue aquí.')}
+    return}
+  var P=document.getElementById('pagado'); P.hidden=false; document.body.style.overflow='hidden';
+  document.getElementById('pg-txt').textContent='Comprobando el pago…';
+  fetch(PAGO_URL+'/pedido?id='+encodeURIComponent(id)).then(function(r){return r.json()}).then(function(j){
+    if(!j.pagado)throw new Error('');
+    document.getElementById('pg-txt').textContent='Hemos recibido el pago de '+eur(j.total)+'. Referencia: '+j.ref+'.';
+    document.getElementById('pg-wa').onclick=function(){abreWA(d?textoPedido(d,j.ref):'Hola El Murciano, acabo de pagar un pedido en la web 👋 Referencia: '+j.ref)};
+    olvida();
+  }).catch(function(){
+    document.getElementById('pg-tit').textContent='No hemos podido comprobar el pago';
+    document.getElementById('pg-ico').textContent='!';document.getElementById('pg-ico').classList.add('mal');
+    document.getElementById('pg-txt').textContent='Si te ha llegado el recibo de Stripe al correo, el pago está hecho. Escríbenos por WhatsApp y lo revisamos.';
+    document.getElementById('pg-wa').onclick=function(){abreWA('Hola El Murciano, he pagado un pedido en la web y quiero confirmarlo.')};
+  });
+})();
 
 pintaCats();pinta();pintaNav();pintaModos();refCar();
 document.getElementById('f-sab').addEventListener('change',refCar);
