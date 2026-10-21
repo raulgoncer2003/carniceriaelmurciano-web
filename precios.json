@@ -444,7 +444,16 @@
    "n": "Queso de oveja en manteca",
    "p": 7.2,
    "c": "Sueltos"
+  },
+  "envio": {
+   "n": "Gastos de envío",
+   "p": 7.0,
+   "c": "Envio"
   }
  },
- "sabado": 10.0
+ "sabado": 10.0,
+ "envio": {
+  "precio": 7.0,
+  "gratis": 100.0
+ }
 }
