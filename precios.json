@@ -89,6 +89,361 @@
    "n": "Cesta de Ibéricos",
    "p": 240.0,
    "c": "Navidad"
+  },
+  "s-hamburguesa-de-pollo": {
+   "n": "Hamburguesa de pollo",
+   "p": 2.5,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-de-boletus": {
+   "n": "Hamburguesa de boletus",
+   "p": 2.6,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-crispy": {
+   "n": "Hamburguesa crispy",
+   "p": 2.6,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-con-queso-y-beicon": {
+   "n": "Hamburguesa con queso y beicon",
+   "p": 2.6,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-con-jalapenos": {
+   "n": "Hamburguesa con jalapeños",
+   "p": 2.6,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-de-ternera-angus": {
+   "n": "Hamburguesa de ternera angus",
+   "p": 4.2,
+   "c": "Sueltos"
+  },
+  "s-hamburguesa-de-angus-rellena-de-cebolla-": {
+   "n": "Hamburguesa de angus rellena de cebolla caramelizada y queso de rulo de cabra",
+   "p": 4.95,
+   "c": "Sueltos"
+  },
+  "s-alas-de-pollo": {
+   "n": "Alas de pollo (500 g)",
+   "p": 2.0,
+   "c": "Sueltos"
+  },
+  "s-muslos-de-pollo": {
+   "n": "Muslos de pollo (500 g)",
+   "p": 2.48,
+   "c": "Sueltos"
+  },
+  "s-pollo-entero": {
+   "n": "Pollo entero (500 g)",
+   "p": 4.25,
+   "c": "Sueltos"
+  },
+  "s-pollo-de-corral-entero": {
+   "n": "Pollo de corral entero (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-pechuga-de-pollo": {
+   "n": "Pechuga de pollo (500 g)",
+   "p": 4.9,
+   "c": "Sueltos"
+  },
+  "s-carne-picada-de-llonsa": {
+   "n": "Carne picada de llonsa (500 g)",
+   "p": 4.45,
+   "c": "Sueltos"
+  },
+  "s-llonsa-a-tacos": {
+   "n": "Llonsa a tacos (500 g)",
+   "p": 4.45,
+   "c": "Sueltos"
+  },
+  "s-llonsa-en-filetes": {
+   "n": "Llonsa en filetes (500 g)",
+   "p": 4.45,
+   "c": "Sueltos"
+  },
+  "s-chuleta-de-cerdo-de-teruel": {
+   "n": "Chuleta de cerdo de Teruel (500 g)",
+   "p": 5.45,
+   "c": "Sueltos"
+  },
+  "s-cinta-de-lomo-de-teruel": {
+   "n": "Cinta de lomo de Teruel (500 g)",
+   "p": 6.45,
+   "c": "Sueltos"
+  },
+  "s-cinta-de-lomo-extratierna": {
+   "n": "Cinta de lomo extratierna (500 g)",
+   "p": 3.25,
+   "c": "Sueltos"
+  },
+  "s-costillar-de-cerdo-carnudo-a-trozos": {
+   "n": "Costillar de cerdo carnudo a trozos (500 g)",
+   "p": 4.75,
+   "c": "Sueltos"
+  },
+  "s-panceta-de-teruel": {
+   "n": "Panceta de Teruel (500 g)",
+   "p": 4.75,
+   "c": "Sueltos"
+  },
+  "s-lomo-adobado": {
+   "n": "Lomo adobado (500 g)",
+   "p": 4.9,
+   "c": "Sueltos"
+  },
+  "s-pata-de-cerdo-en-6-trozos": {
+   "n": "Pata de cerdo en 6 trozos (500 g)",
+   "p": 3.95,
+   "c": "Sueltos"
+  },
+  "s-pelotas": {
+   "n": "Pelotas",
+   "p": 2.0,
+   "c": "Sueltos"
+  },
+  "s-filete-de-babilla": {
+   "n": "Filete de babilla (500 g)",
+   "p": 12.0,
+   "c": "Sueltos"
+  },
+  "s-babilla-en-pieza": {
+   "n": "Babilla en pieza (500 g)",
+   "p": 11.5,
+   "c": "Sueltos"
+  },
+  "s-carne-picada-de-ternera": {
+   "n": "Carne picada de ternera (500 g)",
+   "p": 9.0,
+   "c": "Sueltos"
+  },
+  "s-ternera-a-tacos": {
+   "n": "Ternera a tacos (500 g)",
+   "p": 9.0,
+   "c": "Sueltos"
+  },
+  "s-ossobuco": {
+   "n": "Ossobuco (500 g)",
+   "p": 5.9,
+   "c": "Sueltos"
+  },
+  "s-pecho-de-ternera": {
+   "n": "Pecho de ternera (500 g)",
+   "p": 7.25,
+   "c": "Sueltos"
+  },
+  "s-solomillo-de-angus": {
+   "n": "Solomillo de angus (500 g)",
+   "p": 22.5,
+   "c": "Sueltos"
+  },
+  "s-entrecot-de-angus": {
+   "n": "Entrecot de angus (500 g)",
+   "p": 21.0,
+   "c": "Sueltos"
+  },
+  "s-chuleton-de-angus": {
+   "n": "Chuletón de angus (500 g)",
+   "p": 16.5,
+   "c": "Sueltos"
+  },
+  "s-chuletas-de-palo": {
+   "n": "Chuletas de palo (500 g)",
+   "p": 16.0,
+   "c": "Sueltos"
+  },
+  "s-chuletas-de-rinonada": {
+   "n": "Chuletas de riñonada (500 g)",
+   "p": 16.0,
+   "c": "Sueltos"
+  },
+  "s-chuletas-de-pierna": {
+   "n": "Chuletas de pierna (500 g)",
+   "p": 11.05,
+   "c": "Sueltos"
+  },
+  "s-chuletas-de-paletilla": {
+   "n": "Chuletas de paletilla (500 g)",
+   "p": 11.05,
+   "c": "Sueltos"
+  },
+  "s-cuello-de-cordero": {
+   "n": "Cuello de cordero (500 g)",
+   "p": 7.75,
+   "c": "Sueltos"
+  },
+  "s-pecho-de-cordero": {
+   "n": "Pecho de cordero (500 g)",
+   "p": 7.75,
+   "c": "Sueltos"
+  },
+  "s-longaniza": {
+   "n": "Longaniza (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-longaniza-de-cerdo-y-angus": {
+   "n": "Longaniza de cerdo y angus (500 g)",
+   "p": 8.25,
+   "c": "Sueltos"
+  },
+  "s-chorizo-criollo": {
+   "n": "Chorizo criollo (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-chorizo": {
+   "n": "Chorizo (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-chorizo-picante": {
+   "n": "Chorizo picante (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-chistorra": {
+   "n": "Chistorra (500 g)",
+   "p": 5.5,
+   "c": "Sueltos"
+  },
+  "s-morcilla": {
+   "n": "Morcilla (500 g)",
+   "p": 5.0,
+   "c": "Sueltos"
+  },
+  "s-blancos": {
+   "n": "Blancos (500 g)",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-duras": {
+   "n": "Duras (500 g)",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-longaniza-seca": {
+   "n": "Longaniza seca",
+   "p": 4.5,
+   "c": "Sueltos"
+  },
+  "s-chorizo-dulce-curado": {
+   "n": "Chorizo dulce curado",
+   "p": 4.5,
+   "c": "Sueltos"
+  },
+  "s-chorizo-picante-curado": {
+   "n": "Chorizo picante curado",
+   "p": 4.5,
+   "c": "Sueltos"
+  },
+  "s-salchichon-iberico": {
+   "n": "Salchichón ibérico",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-chorizo-iberico": {
+   "n": "Chorizo ibérico",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-sobrasada": {
+   "n": "Sobrasada",
+   "p": 6.0,
+   "c": "Sueltos"
+  },
+  "s-lomo-embuchado-duroc": {
+   "n": "Lomo embuchado duroc",
+   "p": 7.0,
+   "c": "Sueltos"
+  },
+  "s-fuet": {
+   "n": "Fuet",
+   "p": 5.0,
+   "c": "Sueltos"
+  },
+  "s-morcon-murciano": {
+   "n": "Morcón murciano",
+   "p": 6.0,
+   "c": "Sueltos"
+  },
+  "s-compango": {
+   "n": "Compango",
+   "p": 3.3,
+   "c": "Sueltos"
+  },
+  "s-morcilla-de-arroz-de-wagyu": {
+   "n": "Morcilla de arroz de wagyu",
+   "p": 3.5,
+   "c": "Sueltos"
+  },
+  "s-bandeja-de-embutido-de-5": {
+   "n": "Bandeja de embutido de 5 €",
+   "p": 5.0,
+   "c": "Sueltos"
+  },
+  "s-bandeja-de-embutido-de-7": {
+   "n": "Bandeja de embutido de 7 €",
+   "p": 7.0,
+   "c": "Sueltos"
+  },
+  "s-bandeja-de-embutido-de-9": {
+   "n": "Bandeja de embutido de 9 €",
+   "p": 9.0,
+   "c": "Sueltos"
+  },
+  "s-bandeja-de-embutido-de-11": {
+   "n": "Bandeja de embutido de 11 €",
+   "p": 11.0,
+   "c": "Sueltos"
+  },
+  "s-bandeja-de-embutido-de-15": {
+   "n": "Bandeja de embutido de 15 €",
+   "p": 15.0,
+   "c": "Sueltos"
+  },
+  "s-queso-fresco": {
+   "n": "Queso fresco",
+   "p": 7.0,
+   "c": "Sueltos"
+  },
+  "s-queso-tierno-de-oveja": {
+   "n": "Queso tierno de oveja",
+   "p": 4.0,
+   "c": "Sueltos"
+  },
+  "s-queso-semicurado-mezcla": {
+   "n": "Queso semicurado mezcla",
+   "p": 4.0,
+   "c": "Sueltos"
+  },
+  "s-queso-semicurado-de-cabra": {
+   "n": "Queso semicurado de cabra",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-queso-de-oveja-en-cava": {
+   "n": "Queso de oveja en cava",
+   "p": 6.2,
+   "c": "Sueltos"
+  },
+  "s-queso-de-oveja-al-romero": {
+   "n": "Queso de oveja al romero",
+   "p": 5.25,
+   "c": "Sueltos"
+  },
+  "s-queso-de-oveja-con-ajo-negro": {
+   "n": "Queso de oveja con ajo negro",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "s-queso-de-oveja-en-manteca": {
+   "n": "Queso de oveja en manteca",
+   "p": 7.2,
+   "c": "Sueltos"
   }
  },
  "sabado": 10.0

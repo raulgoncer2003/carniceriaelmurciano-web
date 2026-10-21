@@ -72,6 +72,20 @@ img{display:block;max-width:100%}
 .pack.nv .pcab .para{color:#F3DDA6}
 .pack.nv .pcab h3{padding-right:36px}
 .nav .pack{color:var(--negro)}
+.a-sueltos{display:inline-block;margin-top:26px;color:var(--negro);font-size:15px;text-decoration:none;border-bottom:1.5px solid var(--linea);padding-bottom:2px}
+.a-sueltos:hover{border-color:var(--negro)}
+.slista{background:var(--papel);border:1px solid var(--linea);border-radius:18px;padding:6px 22px}
+.srow{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--linea)}
+.srow:last-child{border-bottom:0}
+.srow .sn{flex:1;min-width:0;font-weight:600;font-size:15px;line-height:1.35;color:var(--negro)}
+.srow .sp{font-family:'Lora',serif;font-weight:700;font-size:16px;white-space:nowrap;text-align:right;min-width:92px}
+.srow .sp small{font-family:inherit;font-weight:500;font-size:12.5px;color:var(--texto)}
+.srow .stepper .q{min-width:52px}
+.srow .btn{padding:10px 12px;font-size:14px;width:108px;justify-content:center}
+.srow .btn.ok{background:#2E6B4A;border-color:#2E6B4A;color:#fff}
+@media(max-width:640px){.slista{padding:2px 14px}.srow{flex-wrap:wrap;gap:10px 12px}
+  .srow .sn{flex-basis:calc(100% - 110px)}.srow .sp{min-width:0}
+  .srow .stepper{margin-left:auto}}
 .pack.nv .btn-cl{background:var(--vino);color:#fff}
 .pack.nv .pfoto.vac{background:repeating-linear-gradient(135deg,#17463A 0 12px,#133C32 12px 24px)}
 .pack.nv .pfoto.vac span{color:var(--latoncl)}
@@ -419,6 +433,7 @@ footer a:hover{color:#fff}
     <span><b>Envío gratis</b> a toda España</span><i></i>
     <span>Cestas de <b>Navidad</b>: encarga ya la tuya</span><i></i>
     <span><b>Regalo</b> si recoges tu pedido en la tienda</span><i></i>
+    <span>Ahora también <b>productos sueltos</b></span><i></i>
     <span>Entrega en <b>24-48 h</b>, al vacío y en frío</span><i></i>
     <span>Embutido casero <b>hecho en la tienda</b></span><i></i>
     <span><b>★ 5,0</b> en Google</span><i></i>
@@ -522,6 +537,15 @@ footer a:hover{color:#fff}
   </div>
   <div class="cats rv" id="cats"></div>
   <div class="packs" id="lista"></div>
+  <a class="a-sueltos rv" href="#sueltos">¿Solo quieres algo suelto? Mira los <b>productos sueltos</b> →</a>
+</div></section>
+
+<section class="sueltos" id="sueltos"><div class="wrap">
+  <div class="eyebrow rv">Productos sueltos</div>
+  <h2 class="rv">Lo de siempre, <em>suelto</em></h2>
+  <p class="sub rv">Coge solo lo que necesites. La carne va al peso, de medio kilo en medio kilo; las hamburguesas, el embutido curado, las bandejas y el queso, por unidad. Todo va al mismo pedido que los packs.</p>
+  <div class="cats rv" id="scats"></div>
+  <div class="slista" id="slista"></div>
 </div></section>
 
 <section><div class="wrap">
@@ -814,7 +838,79 @@ var PACKS=[
  {k:'cestaduroc',c:'Navidad',n:'Cesta con Jamón Duroc 50%',para:'Jamón duroc, 4 embutidos y vino',p:125.00,f:'murciano-fotos/d629938f79.webp',
   l:['Jamón 50% duroc','Salchichón ibérico','Chorizo ibérico','Longaniza seca','Sobrasada','Botella de vino']},
  {k:'cestaiberico',c:'Navidad',n:'Cesta de Ibéricos',para:'Jamón de cebo ibérico, 4 embutidos y vino',p:240.00,f:'murciano-fotos/4c15f11200.webp',
-  l:['Jamón 50% cebo ibérico','Salchichón ibérico','Chorizo ibérico','Longaniza seca','Sobrasada','Botella de vino']}
+  l:['Jamón 50% cebo ibérico','Salchichón ibérico','Chorizo ibérico','Longaniza seca','Sobrasada','Botella de vino']},
+/* productos sueltos: kg = precio por kilo, se vende de 500 g en 500 g (p = precio de 500 g) · d = nombre en la lista */
+ {k:'s-hamburguesa-de-pollo',c:'Sueltos',n:'Hamburguesa de pollo',para:'1 unidad',p:2.50,g:'Hamburguesas',d:'Hamburguesa de pollo',u:'ud',l:[]},
+ {k:'s-hamburguesa-de-boletus',c:'Sueltos',n:'Hamburguesa de boletus',para:'1 unidad',p:2.60,g:'Hamburguesas',d:'Hamburguesa de boletus',u:'ud',l:[]},
+ {k:'s-hamburguesa-crispy',c:'Sueltos',n:'Hamburguesa crispy',para:'1 unidad',p:2.60,g:'Hamburguesas',d:'Hamburguesa crispy',u:'ud',l:[]},
+ {k:'s-hamburguesa-con-queso-y-beicon',c:'Sueltos',n:'Hamburguesa con queso y beicon',para:'1 unidad',p:2.60,g:'Hamburguesas',d:'Hamburguesa con queso y beicon',u:'ud',l:[]},
+ {k:'s-hamburguesa-con-jalapenos',c:'Sueltos',n:'Hamburguesa con jalapeños',para:'1 unidad',p:2.60,g:'Hamburguesas',d:'Hamburguesa con jalapeños',u:'ud',l:[]},
+ {k:'s-hamburguesa-de-ternera-angus',c:'Sueltos',n:'Hamburguesa de ternera angus',para:'1 unidad',p:4.20,g:'Hamburguesas',d:'Hamburguesa de ternera angus',u:'ud',l:[]},
+ {k:'s-hamburguesa-de-angus-rellena-de-cebolla-',c:'Sueltos',n:'Hamburguesa de angus rellena de cebolla caramelizada y queso de rulo de cabra',para:'1 unidad',p:4.95,g:'Hamburguesas',d:'Hamburguesa de angus rellena de cebolla caramelizada y queso de rulo de cabra',u:'ud',l:[]},
+ {k:'s-alas-de-pollo',c:'Sueltos',n:'Alas de pollo (500 g)',para:'500 g',p:2.00,g:'Pollo',d:'Alas de pollo',kg:4.00,l:[]},
+ {k:'s-muslos-de-pollo',c:'Sueltos',n:'Muslos de pollo (500 g)',para:'500 g',p:2.48,g:'Pollo',d:'Muslos de pollo',kg:4.95,l:[]},
+ {k:'s-pollo-entero',c:'Sueltos',n:'Pollo entero (500 g)',para:'500 g',p:4.25,g:'Pollo',d:'Pollo entero',kg:8.50,l:[]},
+ {k:'s-pollo-de-corral-entero',c:'Sueltos',n:'Pollo de corral entero (500 g)',para:'500 g',p:5.50,g:'Pollo',d:'Pollo de corral entero',kg:11.00,l:[]},
+ {k:'s-pechuga-de-pollo',c:'Sueltos',n:'Pechuga de pollo (500 g)',para:'500 g',p:4.90,g:'Pollo',d:'Pechuga de pollo',kg:9.80,l:[]},
+ {k:'s-carne-picada-de-llonsa',c:'Sueltos',n:'Carne picada de llonsa (500 g)',para:'500 g',p:4.45,g:'Cerdo',d:'Carne picada de llonsa',kg:8.90,l:[]},
+ {k:'s-llonsa-a-tacos',c:'Sueltos',n:'Llonsa a tacos (500 g)',para:'500 g',p:4.45,g:'Cerdo',d:'Llonsa a tacos',kg:8.90,l:[]},
+ {k:'s-llonsa-en-filetes',c:'Sueltos',n:'Llonsa en filetes (500 g)',para:'500 g',p:4.45,g:'Cerdo',d:'Llonsa en filetes',kg:8.90,l:[]},
+ {k:'s-chuleta-de-cerdo-de-teruel',c:'Sueltos',n:'Chuleta de cerdo de Teruel (500 g)',para:'500 g',p:5.45,g:'Cerdo',d:'Chuleta de cerdo de Teruel',kg:10.90,l:[]},
+ {k:'s-cinta-de-lomo-de-teruel',c:'Sueltos',n:'Cinta de lomo de Teruel (500 g)',para:'500 g',p:6.45,g:'Cerdo',d:'Cinta de lomo de Teruel',kg:12.90,l:[]},
+ {k:'s-cinta-de-lomo-extratierna',c:'Sueltos',n:'Cinta de lomo extratierna (500 g)',para:'500 g',p:3.25,g:'Cerdo',d:'Cinta de lomo extratierna',kg:6.50,l:[]},
+ {k:'s-costillar-de-cerdo-carnudo-a-trozos',c:'Sueltos',n:'Costillar de cerdo carnudo a trozos (500 g)',para:'500 g',p:4.75,g:'Cerdo',d:'Costillar de cerdo carnudo a trozos',kg:9.50,l:[]},
+ {k:'s-panceta-de-teruel',c:'Sueltos',n:'Panceta de Teruel (500 g)',para:'500 g',p:4.75,g:'Cerdo',d:'Panceta de Teruel',kg:9.50,l:[]},
+ {k:'s-lomo-adobado',c:'Sueltos',n:'Lomo adobado (500 g)',para:'500 g',p:4.90,g:'Cerdo',d:'Lomo adobado',kg:9.80,l:[]},
+ {k:'s-pata-de-cerdo-en-6-trozos',c:'Sueltos',n:'Pata de cerdo en 6 trozos (500 g)',para:'500 g',p:3.95,g:'Cerdo',d:'Pata de cerdo en 6 trozos',kg:7.90,l:[]},
+ {k:'s-pelotas',c:'Sueltos',n:'Pelotas',para:'1 unidad',p:2.00,g:'Cerdo',d:'Pelotas',u:'ud',l:[]},
+ {k:'s-filete-de-babilla',c:'Sueltos',n:'Filete de babilla (500 g)',para:'500 g',p:12.00,g:'Ternera',d:'Filete de babilla',kg:24.00,l:[]},
+ {k:'s-babilla-en-pieza',c:'Sueltos',n:'Babilla en pieza (500 g)',para:'500 g',p:11.50,g:'Ternera',d:'Babilla en pieza',kg:23.00,l:[]},
+ {k:'s-carne-picada-de-ternera',c:'Sueltos',n:'Carne picada de ternera (500 g)',para:'500 g',p:9.00,g:'Ternera',d:'Carne picada de ternera',kg:18.00,l:[]},
+ {k:'s-ternera-a-tacos',c:'Sueltos',n:'Ternera a tacos (500 g)',para:'500 g',p:9.00,g:'Ternera',d:'Ternera a tacos',kg:18.00,l:[]},
+ {k:'s-ossobuco',c:'Sueltos',n:'Ossobuco (500 g)',para:'500 g',p:5.90,g:'Ternera',d:'Ossobuco',kg:11.80,l:[]},
+ {k:'s-pecho-de-ternera',c:'Sueltos',n:'Pecho de ternera (500 g)',para:'500 g',p:7.25,g:'Ternera',d:'Pecho de ternera',kg:14.50,l:[]},
+ {k:'s-solomillo-de-angus',c:'Sueltos',n:'Solomillo de angus (500 g)',para:'500 g',p:22.50,g:'Ternera',d:'Solomillo de angus',kg:45.00,l:[]},
+ {k:'s-entrecot-de-angus',c:'Sueltos',n:'Entrecot de angus (500 g)',para:'500 g',p:21.00,g:'Ternera',d:'Entrecot de angus',kg:42.00,l:[]},
+ {k:'s-chuleton-de-angus',c:'Sueltos',n:'Chuletón de angus (500 g)',para:'500 g',p:16.50,g:'Ternera',d:'Chuletón de angus',kg:33.00,l:[]},
+ {k:'s-chuletas-de-palo',c:'Sueltos',n:'Chuletas de palo (500 g)',para:'500 g',p:16.00,g:'Cordero',d:'Chuletas de palo',kg:32.00,l:[]},
+ {k:'s-chuletas-de-rinonada',c:'Sueltos',n:'Chuletas de riñonada (500 g)',para:'500 g',p:16.00,g:'Cordero',d:'Chuletas de riñonada',kg:32.00,l:[]},
+ {k:'s-chuletas-de-pierna',c:'Sueltos',n:'Chuletas de pierna (500 g)',para:'500 g',p:11.05,g:'Cordero',d:'Chuletas de pierna',kg:22.10,l:[]},
+ {k:'s-chuletas-de-paletilla',c:'Sueltos',n:'Chuletas de paletilla (500 g)',para:'500 g',p:11.05,g:'Cordero',d:'Chuletas de paletilla',kg:22.10,l:[]},
+ {k:'s-cuello-de-cordero',c:'Sueltos',n:'Cuello de cordero (500 g)',para:'500 g',p:7.75,g:'Cordero',d:'Cuello de cordero',kg:15.50,l:[]},
+ {k:'s-pecho-de-cordero',c:'Sueltos',n:'Pecho de cordero (500 g)',para:'500 g',p:7.75,g:'Cordero',d:'Pecho de cordero',kg:15.50,l:[]},
+ {k:'s-longaniza',c:'Sueltos',n:'Longaniza (500 g)',para:'500 g',p:5.50,g:'Embutido fresco',d:'Longaniza',kg:11.00,l:[]},
+ {k:'s-longaniza-de-cerdo-y-angus',c:'Sueltos',n:'Longaniza de cerdo y angus (500 g)',para:'500 g',p:8.25,g:'Embutido fresco',d:'Longaniza de cerdo y angus',kg:16.50,l:[]},
+ {k:'s-chorizo-criollo',c:'Sueltos',n:'Chorizo criollo (500 g)',para:'500 g',p:5.50,g:'Embutido fresco',d:'Chorizo criollo',kg:11.00,l:[]},
+ {k:'s-chorizo',c:'Sueltos',n:'Chorizo (500 g)',para:'500 g',p:5.50,g:'Embutido fresco',d:'Chorizo',kg:11.00,l:[]},
+ {k:'s-chorizo-picante',c:'Sueltos',n:'Chorizo picante (500 g)',para:'500 g',p:5.50,g:'Embutido fresco',d:'Chorizo picante',kg:11.00,l:[]},
+ {k:'s-chistorra',c:'Sueltos',n:'Chistorra (500 g)',para:'500 g',p:5.50,g:'Embutido fresco',d:'Chistorra',kg:11.00,l:[]},
+ {k:'s-morcilla',c:'Sueltos',n:'Morcilla (500 g)',para:'500 g',p:5.00,g:'Embutido fresco',d:'Morcilla',kg:10.00,l:[]},
+ {k:'s-blancos',c:'Sueltos',n:'Blancos (500 g)',para:'500 g',p:6.50,g:'Embutido fresco',d:'Blancos',kg:13.00,l:[]},
+ {k:'s-duras',c:'Sueltos',n:'Duras (500 g)',para:'500 g',p:6.50,g:'Embutido fresco',d:'Duras',kg:13.00,l:[]},
+ {k:'s-longaniza-seca',c:'Sueltos',n:'Longaniza seca',para:'1 pieza',p:4.50,g:'Embutido curado',d:'Longaniza seca',u:'pz',l:[]},
+ {k:'s-chorizo-dulce-curado',c:'Sueltos',n:'Chorizo dulce curado',para:'1 pieza',p:4.50,g:'Embutido curado',d:'Chorizo dulce curado',u:'pz',l:[]},
+ {k:'s-chorizo-picante-curado',c:'Sueltos',n:'Chorizo picante curado',para:'1 pieza',p:4.50,g:'Embutido curado',d:'Chorizo picante curado',u:'pz',l:[]},
+ {k:'s-salchichon-iberico',c:'Sueltos',n:'Salchichón ibérico',para:'1 pieza',p:6.50,g:'Embutido curado',d:'Salchichón ibérico',u:'pz',l:[]},
+ {k:'s-chorizo-iberico',c:'Sueltos',n:'Chorizo ibérico',para:'1 pieza',p:6.50,g:'Embutido curado',d:'Chorizo ibérico',u:'pz',l:[]},
+ {k:'s-sobrasada',c:'Sueltos',n:'Sobrasada',para:'1 pieza',p:6.00,g:'Embutido curado',d:'Sobrasada',u:'pz',l:[]},
+ {k:'s-lomo-embuchado-duroc',c:'Sueltos',n:'Lomo embuchado duroc',para:'1 pieza',p:7.00,g:'Embutido curado',d:'Lomo embuchado duroc',u:'pz',l:[]},
+ {k:'s-fuet',c:'Sueltos',n:'Fuet',para:'1 pieza',p:5.00,g:'Embutido curado',d:'Fuet',u:'pz',l:[]},
+ {k:'s-morcon-murciano',c:'Sueltos',n:'Morcón murciano',para:'1 pieza',p:6.00,g:'Embutido curado',d:'Morcón murciano',u:'pz',l:[]},
+ {k:'s-compango',c:'Sueltos',n:'Compango',para:'1 pieza',p:3.30,g:'Embutido curado',d:'Compango',u:'pz',l:[]},
+ {k:'s-morcilla-de-arroz-de-wagyu',c:'Sueltos',n:'Morcilla de arroz de wagyu',para:'1 pieza',p:3.50,g:'Embutido curado',d:'Morcilla de arroz de wagyu',u:'pz',l:[]},
+ {k:'s-bandeja-de-embutido-de-5',c:'Sueltos',n:'Bandeja de embutido de 5 €',para:'1 unidad',p:5.00,g:'Bandejas de embutido',d:'Bandeja de embutido de 5 €',u:'ud',l:[]},
+ {k:'s-bandeja-de-embutido-de-7',c:'Sueltos',n:'Bandeja de embutido de 7 €',para:'1 unidad',p:7.00,g:'Bandejas de embutido',d:'Bandeja de embutido de 7 €',u:'ud',l:[]},
+ {k:'s-bandeja-de-embutido-de-9',c:'Sueltos',n:'Bandeja de embutido de 9 €',para:'1 unidad',p:9.00,g:'Bandejas de embutido',d:'Bandeja de embutido de 9 €',u:'ud',l:[]},
+ {k:'s-bandeja-de-embutido-de-11',c:'Sueltos',n:'Bandeja de embutido de 11 €',para:'1 unidad',p:11.00,g:'Bandejas de embutido',d:'Bandeja de embutido de 11 €',u:'ud',l:[]},
+ {k:'s-bandeja-de-embutido-de-15',c:'Sueltos',n:'Bandeja de embutido de 15 €',para:'1 unidad',p:15.00,g:'Bandejas de embutido',d:'Bandeja de embutido de 15 €',u:'ud',l:[]},
+ {k:'s-queso-fresco',c:'Sueltos',n:'Queso fresco',para:'1 cuña',p:7.00,g:'Quesos',d:'Queso fresco',u:'cu',l:[]},
+ {k:'s-queso-tierno-de-oveja',c:'Sueltos',n:'Queso tierno de oveja',para:'1 cuña',p:4.00,g:'Quesos',d:'Queso tierno de oveja',u:'cu',l:[]},
+ {k:'s-queso-semicurado-mezcla',c:'Sueltos',n:'Queso semicurado mezcla',para:'1 cuña',p:4.00,g:'Quesos',d:'Queso semicurado mezcla',u:'cu',l:[]},
+ {k:'s-queso-semicurado-de-cabra',c:'Sueltos',n:'Queso semicurado de cabra',para:'1 cuña',p:6.50,g:'Quesos',d:'Queso semicurado de cabra',u:'cu',l:[]},
+ {k:'s-queso-de-oveja-en-cava',c:'Sueltos',n:'Queso de oveja en cava',para:'1 cuña',p:6.20,g:'Quesos',d:'Queso de oveja en cava',u:'cu',l:[]},
+ {k:'s-queso-de-oveja-al-romero',c:'Sueltos',n:'Queso de oveja al romero',para:'1 cuña',p:5.25,g:'Quesos',d:'Queso de oveja al romero',u:'cu',l:[]},
+ {k:'s-queso-de-oveja-con-ajo-negro',c:'Sueltos',n:'Queso de oveja con ajo negro',para:'1 cuña',p:6.50,g:'Quesos',d:'Queso de oveja con ajo negro',u:'cu',l:[]},
+ {k:'s-queso-de-oveja-en-manteca',c:'Sueltos',n:'Queso de oveja en manteca',para:'1 cuña',p:7.20,g:'Quesos',d:'Queso de oveja en manteca',u:'cu',l:[]}
 ];
 var MODOS=[
  {k:'recoger',b:'Recojo en la tienda',g:'con regalo',s:'Avenida de Elche, 1. Preparado a la hora que nos digas, y te llevas un regalo.'},
@@ -828,7 +924,7 @@ function cant(i){return tmp[i]!==undefined?tmp[i]:1}
 function pintaCats(){
   document.getElementById('cats').innerHTML=CATS.map(function(c){
     return '<button class="cat'+(c===cat?' on':'')+'" data-c="'+c+'">'+c+'</button>'}).join('');
-  [].forEach.call(document.querySelectorAll('.cat'),function(b){
+  [].forEach.call(document.querySelectorAll('#cats .cat'),function(b){
     b.addEventListener('click',function(){cat=b.dataset.c;pintaCats();pinta()})});
 }
 function precio(p){return p.p==null?'<span class="pend">Precio pendiente</span>':eur(p.p)+(p.a?' <s class="antes">'+eur(p.a)+'</s>':'')}
@@ -848,6 +944,20 @@ function tarjeta(p,i,nv){
       +'</div></div>'}
 function pinta(){
   document.getElementById('lista').innerHTML=PACKS.map(function(p,i){return p.c===cat?tarjeta(p,i,false):''}).join('');
+}
+var SGR=[],sg='';
+PACKS.forEach(function(p){if(p.c==='Sueltos'&&SGR.indexOf(p.g)<0)SGR.push(p.g)});sg=SGR[0];
+function pintaSueltos(){
+  var c=document.getElementById('scats');if(!c)return;
+  c.innerHTML=SGR.map(function(g){return '<button class="cat'+(g===sg?' on':'')+'" data-g="'+g+'">'+g+'</button>'}).join('');
+  [].forEach.call(c.querySelectorAll('.cat'),function(b){b.addEventListener('click',function(){sg=b.getAttribute('data-g');pintaSueltos()})});
+  document.getElementById('slista').innerHTML=PACKS.map(function(p,i){
+    if(p.c!=='Sueltos'||p.g!==sg)return '';
+    var pr=p.kg?eur(p.kg)+' <small>/kg</small>':eur(p.p)+' <small>/'+({ud:'ud',pz:'pieza',cu:'cuña'}[p.u])+'</small>';
+    return '<div class="srow"><div class="sn">'+p.d+'</div><div class="sp">'+pr+'</div>'
+      +'<div class="stepper"><button onclick="menos('+i+')" aria-label="Menos">−</button><span class="q" id="q'+i+'">'+txq(i,cant(i))+'</span>'
+      +'<button onclick="mas('+i+')" aria-label="Más">+</button></div>'
+      +'<button class="btn btn-cl" onclick="anadir('+i+',this)">Añadir</button></div>'}).join('');
 }
 function pintaNav(){
   var e=document.getElementById('listanav');if(!e)return;
@@ -876,11 +986,15 @@ function pintaNav(){
 }
 function mas(i){tmp[i]=Math.min(20,cant(i)+1);refq(i)}
 function menos(i){tmp[i]=Math.max(1,cant(i)-1);refq(i)}
-function refq(i){var e=document.getElementById('q'+i);if(e)e.textContent=cant(i)}
-function anadir(i){
+function txq(i,q){var p=PACKS[i];return p.kg?(q%2?(q>1?(q-1)/2+',5 kg':'500 g'):q/2+' kg'):q}
+function refq(i){var e=document.getElementById('q'+i);if(e)e.textContent=txq(i,cant(i))}
+function anadir(i,b){
   var q=cant(i),e=car.filter(function(x){return x.i===i})[0];
-  if(e)e.q+=q; else car.push({i:i,q:q});
-  tmp[i]=1;refq(i);refCar();abrir();
+  if(e)e.q=Math.min(20,e.q+q); else car.push({i:i,q:q});
+  tmp[i]=1;refq(i);refCar();
+  if(!b){abrir();return}
+  b.textContent='Añadido ✓';b.classList.add('ok');
+  setTimeout(function(){b.textContent='Añadir';b.classList.remove('ok')},1400);
 }
 function quitar(k){car.splice(k,1);refCar()}
 function totalCar(){return car.reduce(function(s,x){return s+(PACKS[x.i].p||0)*x.q},0)}
@@ -902,9 +1016,9 @@ function refCar(){
   document.getElementById('fab').hidden=(n===0);
   document.getElementById('datos').hidden=(n===0);
   document.getElementById('items').innerHTML = n===0
-   ? '<div class="vacio">Todavía no has añadido ningún pack.<br>Vuelve arriba y elige el que quieras.</div>'
+   ? '<div class="vacio">Todavía no has añadido nada.<br>Vuelve arriba y elige lo que quieras.</div>'
    : car.map(function(x,k){var p=PACKS[x.i];
-      return '<div class="item"><div class="n">'+p.n+'<small>'+x.q+(p.p==null?' ud':' × '+eur(p.p))+(p.r?' · regalo: '+p.r:'')+'</small></div>'
+      return '<div class="item"><div class="n">'+(p.kg?p.d:p.n)+'<small>'+(p.kg?txq(x.i,x.q)+' · '+eur(p.kg)+'/kg':x.q+(p.p==null?' ud':' × '+eur(p.p)))+(p.r?' · regalo: '+p.r:'')+'</small></div>'
         +'<div class="p">'+(p.p==null?'—':eur(p.p*x.q))+'</div><button class="x" onclick="quitar('+k+')">✕</button></div>'}).join('');
 }
 function pintaModos(){
@@ -938,7 +1052,7 @@ function textoPedido(d,ref){
   var m=MODOS.filter(function(x){return x.k===d.modo})[0], tot=0;
   var t='Hola El Murciano, '+(ref?'acabo de pagar un pedido en la web 👋':'quiero hacer un pedido 👋')+'\n\n— MI PEDIDO —\n';
   d.items.forEach(function(x){var p=PACKS[x.i];tot+=(p.p||0)*x.q;
-    t+='• '+x.q+' × '+p.n+(p.p==null?'':' — '+eur(p.p*x.q))+(p.r?' (regalo: '+p.r+')':'')+'\n'});
+    t+='• '+(p.kg?txq(x.i,x.q)+' de '+p.d:x.q+' × '+p.n)+(p.p==null?'':' — '+eur(p.p*x.q))+(p.r?' (regalo: '+p.r+')':'')+'\n'});
   if(d.sabado){t+='• Entrega en sábado — '+eur(SUPL_SAB)+'\n';tot+=SUPL_SAB}
   var falta=d.items.some(function(x){return PACKS[x.i].p==null});
   t+='\nTOTAL: '+(falta?'Por confirmar':eur(tot))+(ref?' · PAGADO CON TARJETA (ref. '+ref+')':'')+'\n\nEntrega: '+(d.sabado?'Envío en sábado (suplemento de 10 €)':m.b)+(m.g?' ('+m.g+')':'')+'\n';
@@ -1009,7 +1123,7 @@ document.getElementById('enviar').addEventListener('click',function(){
   });
 })();
 
-pintaCats();pinta();pintaNav();pintaModos();refCar();
+pintaCats();pinta();pintaNav();pintaSueltos();pintaModos();refCar();
 document.getElementById('f-sab').addEventListener('change',refCar);
 
 /* horario: marca el día de hoy y dice si está abierto ahora */
