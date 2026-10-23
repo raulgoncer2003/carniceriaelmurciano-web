@@ -111,6 +111,7 @@ img{display:block;max-width:100%}
 html.tarjeta .solo-tarjeta{display:block !important}
 html.tarjeta span.solo-tarjeta{display:inline !important}
 html.tarjeta .sin-tarjeta{display:none !important}
+html.tarjeta .solo-tarjeta[hidden]{display:none !important}
 .pg-in{width:min(440px,100%);height:auto !important}
 .pg-body{padding:26px 24px 24px;text-align:center}
 .pg-ok{width:64px;height:64px;border-radius:50%;background:var(--verde);color:#fff;font-size:32px;line-height:64px;margin:0 auto 14px;font-weight:700}
@@ -391,7 +392,8 @@ h2{font-size:clamp(27px,4.2vw,40px);line-height:1.15;margin-bottom:14px;max-widt
 .chk span{font-size:12.5px;color:var(--texto);line-height:1.45;font-weight:500}
 .chk:has(input:checked){border-color:var(--vino);background:#fdf6f6}
 .campo.dos{display:grid;grid-template-columns:1fr 1.7fr;gap:10px}
-.panel input.falta{border-color:var(--vino);background:#fdf1f1}
+.panel input.falta,.panel select.falta{border-color:var(--vino);background:#fdf1f1}
+.campo.dos.rec{grid-template-columns:1fr}
 .nota.avis{color:var(--vino);font-weight:600;margin:0 0 10px}
 .nota b{color:var(--negro)}
 label{display:block;font-size:13px;font-weight:600;margin-bottom:6px}
@@ -767,8 +769,14 @@ footer a:hover{color:#fff}
         <label class="opt" data-p="tienda"><input type="radio" name="pago" value="tienda">
           <span><b>Pagar en la tienda al recoger</b><span>Nos llega el pedido por WhatsApp y pagas cuando vengas.</span></span></label>
       </div></div>
-      <div class="campo"><label for="f-dia">¿Para cuándo?</label>
-        <input id="f-dia" type="text" placeholder="Ej.: el sábado por la mañana"></div>
+      <div class="campo dos rec" id="c-rec">
+        <div><label for="f-rdia">Día de recogida</label>
+          <select id="f-rdia"></select></div>
+        <div><label for="f-rhora">Hora</label>
+          <select id="f-rhora"></select></div>
+      </div>
+      <div class="campo" id="c-dia" hidden><label for="f-dia">¿Para cuándo?</label>
+        <input id="f-dia" type="text" placeholder="Ej.: para el jueves que viene"></div>
       <div class="campo"><label for="f-nom">Tu nombre</label>
         <input id="f-nom" type="text" placeholder="Nombre" autocomplete="name"></div>
       <div class="campo"><label for="f-tel">Tu teléfono</label>
@@ -1038,6 +1046,8 @@ function pintaModos(){
       document.getElementById('l-dir').hidden=!hay;
       document.getElementById('c-cp').hidden=!hay;
       document.getElementById('c-sab').hidden=!hay;
+      document.getElementById('c-rec').hidden=hay;
+      document.getElementById('c-dia').hidden=!hay;
       refCar();
       document.getElementById('l-dir').textContent='Dirección de envío';
     })});
@@ -1047,10 +1057,34 @@ function abrir(){document.getElementById('panel').classList.add('on');
 function cerrar(){document.getElementById('panel').classList.remove('on');
   document.getElementById('back').classList.remove('on');document.body.style.overflow=''}
 
+/* recogida en tienda: días que abre (sin domingos) y franjas de su horario */
+var RH={1:['Mañana (8:15 a 14:00)'],2:['Mañana (8:15 a 14:00)'],3:['Mañana (8:15 a 14:00)'],
+  4:['Mañana (8:15 a 14:00)','Tarde (17:15 a 20:30)'],5:['Mañana (8:15 a 14:00)','Tarde (17:15 a 20:30)'],6:['Mañana (8:15 a 13:30)']};
+var DSEM=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'],
+    MES=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+function txDia(d){return DSEM[d.getDay()]+' '+d.getDate()+' de '+MES[d.getMonth()]}
+function pintaDias(){
+  var s=document.getElementById('f-rdia'),v=s.value,o='<option value="">Elige el día</option>',d=new Date();
+  d.setHours(12,0,0,0);
+  for(var i=1;i<=60;i++){d.setDate(d.getDate()+1);if(!RH[d.getDay()])continue;
+    var k=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+    o+='<option value="'+k+'" data-w="'+d.getDay()+'">'+(i===1?'Mañana, ':'')+txDia(d)+'</option>'}
+  s.innerHTML=o;s.value=v;pintaHoras();
+}
+function pintaHoras(){
+  var s=document.getElementById('f-rdia'),h=document.getElementById('f-rhora'),op=s.options[s.selectedIndex],
+      w=op&&op.getAttribute('data-w'),fr=w?RH[w]:['Mañana','Tarde'],v=h.value;
+  h.innerHTML=fr.map(function(f){return '<option>'+f+'</option>'}).join('');
+  if(fr.indexOf(v)>=0)h.value=v;
+}
+function txRecogida(){
+  var s=document.getElementById('f-rdia'),op=s.options[s.selectedIndex];
+  return s.value?op.textContent.replace('Mañana, ','')+', '+vv('f-rhora').toLowerCase():'';
+}
 function vv(id){var e=document.getElementById(id);return e?(e.value||'').trim():''}
 function datosPedido(){
   return {items:car.map(function(x){return {i:x.i,k:PACKS[x.i].k,q:x.q}}),modo:modo,sabado:sabado(),gastos:gastosEnvio(),
-    dir:vv('f-dir'),cp:vv('f-cp'),loc:vv('f-loc'),dia:vv('f-dia'),nombre:vv('f-nom'),tel:vv('f-tel'),notas:vv('f-obs')};
+    dir:vv('f-dir'),cp:vv('f-cp'),loc:vv('f-loc'),dia:modo==='recoger'?txRecogida():vv('f-dia'),rdia:vv('f-rdia'),rhora:vv('f-rhora'),nombre:vv('f-nom'),tel:vv('f-tel'),notas:vv('f-obs')};
 }
 function textoPedido(d,ref){
   var m=MODOS.filter(function(x){return x.k===d.modo})[0], tot=0;
@@ -1062,7 +1096,7 @@ function textoPedido(d,ref){
   var falta=d.items.some(function(x){return PACKS[x.i].p==null});
   t+='\nTOTAL: '+(falta?'Por confirmar':eur(tot))+(ref?' · PAGADO CON TARJETA (ref. '+ref+')':'')+'\n\nEntrega: '+(d.sabado?'Envío en sábado (suplemento de 10 €)':m.b)+(m.g?' ('+m.g+')':'')+'\n';
   if(d.modo!=='recoger') t+='Dirección: '+d.dir+'\nCP y localidad: '+d.cp+' '+d.loc+'\n';
-  if(d.dia) t+='Para cuándo: '+d.dia+'\n';
+  if(d.dia) t+=(d.modo==='recoger'?'Día de recogida: ':'Para cuándo: ')+d.dia+'\n';
   if(d.nombre) t+='Nombre: '+d.nombre+'\n';
   if(d.tel) t+='Teléfono: '+d.tel+'\n';
   if(d.notas) t+='\nNotas: '+d.notas+'\n';
@@ -1079,7 +1113,8 @@ document.getElementById('enviar').addEventListener('click',function(){
   var falta=[];
   function pide(id,re){var e=document.getElementById(id),ok=re?re.test(vv(id)):!!vv(id);
     e.classList.toggle('falta',!ok);if(!ok)falta.push(e)}
-  ['f-nom','f-dir','f-cp','f-loc'].forEach(function(id){document.getElementById(id).classList.remove('falta')});
+  ['f-nom','f-dir','f-cp','f-loc','f-rdia'].forEach(function(id){document.getElementById(id).classList.remove('falta')});
+  if(modo==='recoger')pide('f-rdia');
   pide('f-nom');
   if(modo!=='recoger'){pide('f-dir');pide('f-cp',/^\d{5}$/);pide('f-loc')}
   aviso(falta.length?'Rellena los campos marcados en rojo.':'');
@@ -1100,6 +1135,7 @@ document.getElementById('enviar').addEventListener('click',function(){
   o.addEventListener('click',function(){pago=o.dataset.p;
     [].forEach.call(document.querySelectorAll('#c-pago .opt'),function(x){x.classList.toggle('on',x===o)});refCar()})});
 
+pintaDias();
 /* vuelta de Stripe: ?pagado=cs_… o ?cancelado=1 */
 (function(){
   if(!PAGO_URL)return;
@@ -1110,7 +1146,10 @@ document.getElementById('enviar').addEventListener('click',function(){
     if(d){car=d.items.map(function(x){return {i:x.i,q:x.q}});modo=d.modo;pintaModos();
       ['dir','cp','loc','dia','nombre','tel','notas'].forEach(function(k){var e=document.getElementById({dir:'f-dir',cp:'f-cp',loc:'f-loc',dia:'f-dia',nombre:'f-nom',tel:'f-tel',notas:'f-obs'}[k]);if(e)e.value=d[k]||''});
       document.getElementById('f-sab').checked=!!d.sabado;
-      ['f-dir','l-dir','c-cp','c-sab'].forEach(function(x){document.getElementById(x).hidden=d.modo==='recoger'});
+      ['f-dir','l-dir','c-cp','c-sab','c-dia'].forEach(function(x){document.getElementById(x).hidden=d.modo==='recoger'});
+      document.getElementById('c-rec').hidden=d.modo!=='recoger';
+      if(d.rdia){document.getElementById('f-rdia').value=d.rdia;pintaHoras();document.getElementById('f-rhora').value=d.rhora||''}
+      if(d.modo==='recoger')document.getElementById('f-dia').value='';
       refCar();abrir();aviso('No se ha hecho ningún cobro. Tu pedido sigue aquí.')}
     return}
   var P=document.getElementById('pagado'); P.hidden=false; document.body.style.overflow='hidden';
@@ -1130,6 +1169,7 @@ document.getElementById('enviar').addEventListener('click',function(){
 
 pintaCats();pinta();pintaNav();pintaSueltos();pintaModos();refCar();
 document.getElementById('f-sab').addEventListener('change',refCar);
+document.getElementById('f-rdia').addEventListener('change',function(){this.classList.remove('falta');pintaHoras()});
 
 /* horario: marca el día de hoy y dice si está abierto ahora */
 (function(){
