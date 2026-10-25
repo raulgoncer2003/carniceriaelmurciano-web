@@ -445,6 +445,266 @@
    "p": 7.2,
    "c": "Sueltos"
   },
+  "c-aceitunas-embrujos": {
+   "n": "Aceitunas Embrujos",
+   "p": 4.99,
+   "c": "Sueltos"
+  },
+  "c-aceitunas-chimichurri": {
+   "n": "Aceitunas chimichurri",
+   "p": 2.99,
+   "c": "Sueltos"
+  },
+  "c-aceitunas-a-la-trufa-blanca": {
+   "n": "Aceitunas a la trufa blanca",
+   "p": 2.99,
+   "c": "Sueltos"
+  },
+  "c-aceitunas-verdes-partidas": {
+   "n": "Aceitunas verdes partidas",
+   "p": 2.0,
+   "c": "Sueltos"
+  },
+  "c-olivas-lagarteiras": {
+   "n": "Olivas lagarteiras",
+   "p": 4.95,
+   "c": "Sueltos"
+  },
+  "c-olivas-extragrandes": {
+   "n": "Olivas extragrandes",
+   "p": 7.9,
+   "c": "Sueltos"
+  },
+  "c-olivas-grandes": {
+   "n": "Olivas grandes",
+   "p": 6.9,
+   "c": "Sueltos"
+  },
+  "c-olivas-pequenas": {
+   "n": "Olivas pequeñas",
+   "p": 2.4,
+   "c": "Sueltos"
+  },
+  "c-gildas": {
+   "n": "Gildas",
+   "p": 1.13,
+   "c": "Sueltos"
+  },
+  "c-piparras-dulces": {
+   "n": "Piparras dulces",
+   "p": 3.45,
+   "c": "Sueltos"
+  },
+  "c-guindillas-piparra": {
+   "n": "Guindillas piparra",
+   "p": 5.05,
+   "c": "Sueltos"
+  },
+  "c-guindillas-lombarda": {
+   "n": "Guindillas lombarda",
+   "p": 4.2,
+   "c": "Sueltos"
+  },
+  "c-cebollitas-en-vinagre": {
+   "n": "Cebollitas en vinagre",
+   "p": 4.45,
+   "c": "Sueltos"
+  },
+  "c-atun-claro": {
+   "n": "Atún claro",
+   "p": 3.35,
+   "c": "Sueltos"
+  },
+  "c-bonito-en-aceite": {
+   "n": "Bonito en aceite",
+   "p": 4.1,
+   "c": "Sueltos"
+  },
+  "c-sardinas-en-aceite": {
+   "n": "Sardinas en aceite",
+   "p": 1.9,
+   "c": "Sueltos"
+  },
+  "c-sardinas-en-tomate": {
+   "n": "Sardinas en tomate",
+   "p": 2.0,
+   "c": "Sueltos"
+  },
+  "c-boquerones": {
+   "n": "Boquerones",
+   "p": 3.8,
+   "c": "Sueltos"
+  },
+  "c-mejillones": {
+   "n": "Mejillones",
+   "p": 4.2,
+   "c": "Sueltos"
+  },
+  "c-berberechos": {
+   "n": "Berberechos",
+   "p": 5.8,
+   "c": "Sueltos"
+  },
+  "c-navajas": {
+   "n": "Navajas",
+   "p": 3.2,
+   "c": "Sueltos"
+  },
+  "c-calamares-en-salsa": {
+   "n": "Calamares en salsa",
+   "p": 2.1,
+   "c": "Sueltos"
+  },
+  "c-chipirones-rellenos": {
+   "n": "Chipirones rellenos",
+   "p": 3.5,
+   "c": "Sueltos"
+  },
+  "c-capellan": {
+   "n": "Capellán",
+   "p": 4.5,
+   "c": "Sueltos"
+  },
+  "c-surtido-de-salazon": {
+   "n": "Surtido de salazón",
+   "p": 4.6,
+   "c": "Sueltos"
+  },
+  "c-pericana-a-la-brasa": {
+   "n": "Pericana a la brasa",
+   "p": 4.8,
+   "c": "Sueltos"
+  },
+  "c-callos": {
+   "n": "Callos",
+   "p": 4.5,
+   "c": "Sueltos"
+  },
+  "c-callos-en-bote": {
+   "n": "Callos en bote",
+   "p": 5.1,
+   "c": "Sueltos"
+  },
+  "c-carrillada-en-salsa-bote": {
+   "n": "Carrillada en salsa (bote)",
+   "p": 8.5,
+   "c": "Sueltos"
+  },
+  "c-fabada-bote": {
+   "n": "Fabada (bote)",
+   "p": 6.1,
+   "c": "Sueltos"
+  },
+  "c-albondigas-bote": {
+   "n": "Albóndigas (bote)",
+   "p": 6.0,
+   "c": "Sueltos"
+  },
+  "c-lentejas-bote": {
+   "n": "Lentejas (bote)",
+   "p": 2.12,
+   "c": "Sueltos"
+  },
+  "c-alubias-grandes": {
+   "n": "Alubias grandes",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-habichuelas-pequenas": {
+   "n": "Habichuelas pequeñas",
+   "p": 2.12,
+   "c": "Sueltos"
+  },
+  "c-garbanzos-grandes": {
+   "n": "Garbanzos grandes",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-judion": {
+   "n": "Judión",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-alcachofas-tarro-grande": {
+   "n": "Alcachofas (tarro grande)",
+   "p": 6.5,
+   "c": "Sueltos"
+  },
+  "c-alcachofas-tarro-pequeno": {
+   "n": "Alcachofas (tarro pequeño)",
+   "p": 3.8,
+   "c": "Sueltos"
+  },
+  "c-esparragos-blancos": {
+   "n": "Espárragos blancos",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-tomate-casero-rallado": {
+   "n": "Tomate casero rallado",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-tomate-entero": {
+   "n": "Tomate entero",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-moje-murciano": {
+   "n": "Moje murciano",
+   "p": 2.9,
+   "c": "Sueltos"
+  },
+  "c-crema-de-calabacin": {
+   "n": "Crema de calabacín",
+   "p": 3.9,
+   "c": "Sueltos"
+  },
+  "c-crema-de-verduras": {
+   "n": "Crema de verduras",
+   "p": 3.9,
+   "c": "Sueltos"
+  },
+  "c-crema-de-aguacate": {
+   "n": "Crema de aguacate",
+   "p": 3.9,
+   "c": "Sueltos"
+  },
+  "c-pate-de-morcilla": {
+   "n": "Paté de morcilla",
+   "p": 2.95,
+   "c": "Sueltos"
+  },
+  "c-pate-de-perdiz": {
+   "n": "Paté de perdiz",
+   "p": 3.3,
+   "c": "Sueltos"
+  },
+  "c-pate-de-bonito": {
+   "n": "Paté de bonito",
+   "p": 3.3,
+   "c": "Sueltos"
+  },
+  "c-mermelada-de-bacon": {
+   "n": "Mermelada de bacon",
+   "p": 4.75,
+   "c": "Sueltos"
+  },
+  "c-aceite-de-oliva-virgen-extra": {
+   "n": "Aceite de oliva virgen extra",
+   "p": 31.0,
+   "c": "Sueltos"
+  },
+  "c-sal-fina": {
+   "n": "Sal fina",
+   "p": 0.7,
+   "c": "Sueltos"
+  },
+  "c-la-pinsa": {
+   "n": "La Pinsa",
+   "p": 3.8,
+   "c": "Sueltos"
+  },
   "envio": {
    "n": "Gastos de envío",
    "p": 7.0,

@@ -435,7 +435,7 @@ footer a:hover{color:#fff}
     <span><b>Envío gratis</b> en packs y cestas</span><i></i>
     <span>Cestas de <b>Navidad</b>: encarga ya la tuya</span><i></i>
     <span><b>Regalo</b> si recoges tu pedido en la tienda</span><i></i>
-    <span>Ahora también <b>productos sueltos</b></span><i></i>
+    <span>Ahora también <b>productos sueltos y conservas</b></span><i></i>
     <span>Entrega en <b>24-48 h</b>, al vacío y en frío</span><i></i>
     <span>Embutido casero <b>hecho en la tienda</b></span><i></i>
     <span><b>★ 5,0</b> en Google</span><i></i>
@@ -539,7 +539,7 @@ footer a:hover{color:#fff}
   </div>
   <div class="cats rv" id="cats"></div>
   <div class="packs" id="lista"></div>
-  <a class="a-sueltos rv" href="#sueltos">¿Solo quieres algo suelto? Mira los <b>productos sueltos</b> →</a>
+  <a class="a-sueltos rv" href="#sueltos">¿Solo quieres algo suelto? Mira los <b>productos sueltos</b> y las <b>conservas</b> →</a>
 </div></section>
 
 <section class="sueltos" id="sueltos"><div class="wrap">
@@ -548,6 +548,14 @@ footer a:hover{color:#fff}
   <p class="sub rv">Coge solo lo que necesites. La carne va al peso, de medio kilo en medio kilo; las hamburguesas, el embutido curado, las bandejas y el queso, por unidad. Todo va al mismo pedido que los packs. Envío: 7 €, y gratis si el pedido pasa de 100 € o lleva cualquier pack.</p>
   <div class="cats rv" id="scats"></div>
   <div class="slista" id="slista"></div>
+</div></section>
+
+<section class="sueltos" id="conservas"><div class="wrap">
+  <div class="eyebrow rv">Conservas</div>
+  <h2 class="rv">Para tu <em>despensa</em></h2>
+  <p class="sub rv">Aceitunas, encurtidos, latas de pescado y marisco, legumbres, platos ya hechos y patés. Van al mismo pedido que todo lo demás. Envío: 7 €, y gratis si el pedido pasa de 100 € o lleva cualquier pack.</p>
+  <div class="cats rv" id="ccats"></div>
+  <div class="slista" id="clista"></div>
 </div></section>
 
 <section><div class="wrap">
@@ -918,7 +926,60 @@ var PACKS=[
  {k:'s-queso-de-oveja-en-cava',c:'Sueltos',n:'Queso de oveja en cava',para:'1 cuña',p:6.20,g:'Quesos',d:'Queso de oveja en cava',u:'cu',l:[]},
  {k:'s-queso-de-oveja-al-romero',c:'Sueltos',n:'Queso de oveja al romero',para:'1 cuña',p:5.25,g:'Quesos',d:'Queso de oveja al romero',u:'cu',l:[]},
  {k:'s-queso-de-oveja-con-ajo-negro',c:'Sueltos',n:'Queso de oveja con ajo negro',para:'1 cuña',p:6.50,g:'Quesos',d:'Queso de oveja con ajo negro',u:'cu',l:[]},
- {k:'s-queso-de-oveja-en-manteca',c:'Sueltos',n:'Queso de oveja en manteca',para:'1 cuña',p:7.20,g:'Quesos',d:'Queso de oveja en manteca',u:'cu',l:[]}
+ {k:'s-queso-de-oveja-en-manteca',c:'Sueltos',n:'Queso de oveja en manteca',para:'1 cuña',p:7.20,g:'Quesos',d:'Queso de oveja en manteca',u:'cu',l:[]},
+/* conservas (s:cons): van como sueltos para el cobro y el envío, pero en su propia sección */
+ {k:'c-aceitunas-embrujos',c:'Sueltos',n:'Aceitunas Embrujos',para:'1 unidad',p:4.99,g:'Aceitunas y encurtidos',d:'Aceitunas Embrujos',u:'ud',s:'cons',l:[]},
+ {k:'c-aceitunas-chimichurri',c:'Sueltos',n:'Aceitunas chimichurri',para:'1 unidad',p:2.99,g:'Aceitunas y encurtidos',d:'Aceitunas chimichurri',u:'ud',s:'cons',l:[]},
+ {k:'c-aceitunas-a-la-trufa-blanca',c:'Sueltos',n:'Aceitunas a la trufa blanca',para:'1 unidad',p:2.99,g:'Aceitunas y encurtidos',d:'Aceitunas a la trufa blanca',u:'ud',s:'cons',l:[]},
+ {k:'c-aceitunas-verdes-partidas',c:'Sueltos',n:'Aceitunas verdes partidas',para:'1 unidad',p:2.00,g:'Aceitunas y encurtidos',d:'Aceitunas verdes partidas',u:'ud',s:'cons',l:[]},
+ {k:'c-olivas-lagarteiras',c:'Sueltos',n:'Olivas lagarteiras',para:'1 unidad',p:4.95,g:'Aceitunas y encurtidos',d:'Olivas lagarteiras',u:'ud',s:'cons',l:[]},
+ {k:'c-olivas-extragrandes',c:'Sueltos',n:'Olivas extragrandes',para:'1 unidad',p:7.90,g:'Aceitunas y encurtidos',d:'Olivas extragrandes',u:'ud',s:'cons',l:[]},
+ {k:'c-olivas-grandes',c:'Sueltos',n:'Olivas grandes',para:'1 unidad',p:6.90,g:'Aceitunas y encurtidos',d:'Olivas grandes',u:'ud',s:'cons',l:[]},
+ {k:'c-olivas-pequenas',c:'Sueltos',n:'Olivas pequeñas',para:'1 unidad',p:2.40,g:'Aceitunas y encurtidos',d:'Olivas pequeñas',u:'ud',s:'cons',l:[]},
+ {k:'c-gildas',c:'Sueltos',n:'Gildas',para:'1 unidad',p:1.13,g:'Aceitunas y encurtidos',d:'Gildas',u:'ud',s:'cons',l:[]},
+ {k:'c-piparras-dulces',c:'Sueltos',n:'Piparras dulces',para:'1 unidad',p:3.45,g:'Aceitunas y encurtidos',d:'Piparras dulces',u:'ud',s:'cons',l:[]},
+ {k:'c-guindillas-piparra',c:'Sueltos',n:'Guindillas piparra',para:'1 unidad',p:5.05,g:'Aceitunas y encurtidos',d:'Guindillas piparra',u:'ud',s:'cons',l:[]},
+ {k:'c-guindillas-lombarda',c:'Sueltos',n:'Guindillas lombarda',para:'1 unidad',p:4.20,g:'Aceitunas y encurtidos',d:'Guindillas lombarda',u:'ud',s:'cons',l:[]},
+ {k:'c-cebollitas-en-vinagre',c:'Sueltos',n:'Cebollitas en vinagre',para:'1 unidad',p:4.45,g:'Aceitunas y encurtidos',d:'Cebollitas en vinagre',u:'ud',s:'cons',l:[]},
+ {k:'c-atun-claro',c:'Sueltos',n:'Atún claro',para:'1 unidad',p:3.35,g:'Pescado y marisco',d:'Atún claro',u:'ud',s:'cons',l:[]},
+ {k:'c-bonito-en-aceite',c:'Sueltos',n:'Bonito en aceite',para:'1 unidad',p:4.10,g:'Pescado y marisco',d:'Bonito en aceite',u:'ud',s:'cons',l:[]},
+ {k:'c-sardinas-en-aceite',c:'Sueltos',n:'Sardinas en aceite',para:'1 unidad',p:1.90,g:'Pescado y marisco',d:'Sardinas en aceite',u:'ud',s:'cons',l:[]},
+ {k:'c-sardinas-en-tomate',c:'Sueltos',n:'Sardinas en tomate',para:'1 unidad',p:2.00,g:'Pescado y marisco',d:'Sardinas en tomate',u:'ud',s:'cons',l:[]},
+ {k:'c-boquerones',c:'Sueltos',n:'Boquerones',para:'1 unidad',p:3.80,g:'Pescado y marisco',d:'Boquerones',u:'ud',s:'cons',l:[]},
+ {k:'c-mejillones',c:'Sueltos',n:'Mejillones',para:'1 unidad',p:4.20,g:'Pescado y marisco',d:'Mejillones',u:'ud',s:'cons',l:[]},
+ {k:'c-berberechos',c:'Sueltos',n:'Berberechos',para:'1 unidad',p:5.80,g:'Pescado y marisco',d:'Berberechos',u:'ud',s:'cons',l:[]},
+ {k:'c-navajas',c:'Sueltos',n:'Navajas',para:'1 unidad',p:3.20,g:'Pescado y marisco',d:'Navajas',u:'ud',s:'cons',l:[]},
+ {k:'c-calamares-en-salsa',c:'Sueltos',n:'Calamares en salsa',para:'1 unidad',p:2.10,g:'Pescado y marisco',d:'Calamares en salsa',u:'ud',s:'cons',l:[]},
+ {k:'c-chipirones-rellenos',c:'Sueltos',n:'Chipirones rellenos',para:'1 unidad',p:3.50,g:'Pescado y marisco',d:'Chipirones rellenos',u:'ud',s:'cons',l:[]},
+ {k:'c-capellan',c:'Sueltos',n:'Capellán',para:'1 unidad',p:4.50,g:'Pescado y marisco',d:'Capellán',u:'ud',s:'cons',l:[]},
+ {k:'c-surtido-de-salazon',c:'Sueltos',n:'Surtido de salazón',para:'1 unidad',p:4.60,g:'Pescado y marisco',d:'Surtido de salazón',u:'ud',s:'cons',l:[]},
+ {k:'c-pericana-a-la-brasa',c:'Sueltos',n:'Pericana a la brasa',para:'1 unidad',p:4.80,g:'Pescado y marisco',d:'Pericana a la brasa',u:'ud',s:'cons',l:[]},
+ {k:'c-callos',c:'Sueltos',n:'Callos',para:'1 unidad',p:4.50,g:'Platos y legumbres',d:'Callos',u:'ud',s:'cons',l:[]},
+ {k:'c-callos-en-bote',c:'Sueltos',n:'Callos en bote',para:'1 unidad',p:5.10,g:'Platos y legumbres',d:'Callos en bote',u:'ud',s:'cons',l:[]},
+ {k:'c-carrillada-en-salsa-bote',c:'Sueltos',n:'Carrillada en salsa (bote)',para:'1 unidad',p:8.50,g:'Platos y legumbres',d:'Carrillada en salsa (bote)',u:'ud',s:'cons',l:[]},
+ {k:'c-fabada-bote',c:'Sueltos',n:'Fabada (bote)',para:'1 unidad',p:6.10,g:'Platos y legumbres',d:'Fabada (bote)',u:'ud',s:'cons',l:[]},
+ {k:'c-albondigas-bote',c:'Sueltos',n:'Albóndigas (bote)',para:'1 unidad',p:6.00,g:'Platos y legumbres',d:'Albóndigas (bote)',u:'ud',s:'cons',l:[]},
+ {k:'c-lentejas-bote',c:'Sueltos',n:'Lentejas (bote)',para:'1 unidad',p:2.12,g:'Platos y legumbres',d:'Lentejas (bote)',u:'ud',s:'cons',l:[]},
+ {k:'c-alubias-grandes',c:'Sueltos',n:'Alubias grandes',para:'1 unidad',p:2.90,g:'Platos y legumbres',d:'Alubias grandes',u:'ud',s:'cons',l:[]},
+ {k:'c-habichuelas-pequenas',c:'Sueltos',n:'Habichuelas pequeñas',para:'1 unidad',p:2.12,g:'Platos y legumbres',d:'Habichuelas pequeñas',u:'ud',s:'cons',l:[]},
+ {k:'c-garbanzos-grandes',c:'Sueltos',n:'Garbanzos grandes',para:'1 unidad',p:2.90,g:'Platos y legumbres',d:'Garbanzos grandes',u:'ud',s:'cons',l:[]},
+ {k:'c-judion',c:'Sueltos',n:'Judión',para:'1 unidad',p:2.90,g:'Platos y legumbres',d:'Judión',u:'ud',s:'cons',l:[]},
+ {k:'c-alcachofas-tarro-grande',c:'Sueltos',n:'Alcachofas (tarro grande)',para:'1 unidad',p:6.50,g:'Verduras y cremas',d:'Alcachofas (tarro grande)',u:'ud',s:'cons',l:[]},
+ {k:'c-alcachofas-tarro-pequeno',c:'Sueltos',n:'Alcachofas (tarro pequeño)',para:'1 unidad',p:3.80,g:'Verduras y cremas',d:'Alcachofas (tarro pequeño)',u:'ud',s:'cons',l:[]},
+ {k:'c-esparragos-blancos',c:'Sueltos',n:'Espárragos blancos',para:'1 unidad',p:2.90,g:'Verduras y cremas',d:'Espárragos blancos',u:'ud',s:'cons',l:[]},
+ {k:'c-tomate-casero-rallado',c:'Sueltos',n:'Tomate casero rallado',para:'1 unidad',p:2.90,g:'Verduras y cremas',d:'Tomate casero rallado',u:'ud',s:'cons',l:[]},
+ {k:'c-tomate-entero',c:'Sueltos',n:'Tomate entero',para:'1 unidad',p:2.90,g:'Verduras y cremas',d:'Tomate entero',u:'ud',s:'cons',l:[]},
+ {k:'c-moje-murciano',c:'Sueltos',n:'Moje murciano',para:'1 unidad',p:2.90,g:'Verduras y cremas',d:'Moje murciano',u:'ud',s:'cons',l:[]},
+ {k:'c-crema-de-calabacin',c:'Sueltos',n:'Crema de calabacín',para:'1 unidad',p:3.90,g:'Verduras y cremas',d:'Crema de calabacín',u:'ud',s:'cons',l:[]},
+ {k:'c-crema-de-verduras',c:'Sueltos',n:'Crema de verduras',para:'1 unidad',p:3.90,g:'Verduras y cremas',d:'Crema de verduras',u:'ud',s:'cons',l:[]},
+ {k:'c-crema-de-aguacate',c:'Sueltos',n:'Crema de aguacate',para:'1 unidad',p:3.90,g:'Verduras y cremas',d:'Crema de aguacate',u:'ud',s:'cons',l:[]},
+ {k:'c-pate-de-morcilla',c:'Sueltos',n:'Paté de morcilla',para:'1 unidad',p:2.95,g:'Patés y despensa',d:'Paté de morcilla',u:'ud',s:'cons',l:[]},
+ {k:'c-pate-de-perdiz',c:'Sueltos',n:'Paté de perdiz',para:'1 unidad',p:3.30,g:'Patés y despensa',d:'Paté de perdiz',u:'ud',s:'cons',l:[]},
+ {k:'c-pate-de-bonito',c:'Sueltos',n:'Paté de bonito',para:'1 unidad',p:3.30,g:'Patés y despensa',d:'Paté de bonito',u:'ud',s:'cons',l:[]},
+ {k:'c-mermelada-de-bacon',c:'Sueltos',n:'Mermelada de bacon',para:'1 unidad',p:4.75,g:'Patés y despensa',d:'Mermelada de bacon',u:'ud',s:'cons',l:[]},
+ {k:'c-aceite-de-oliva-virgen-extra',c:'Sueltos',n:'Aceite de oliva virgen extra',para:'1 unidad',p:31.00,g:'Patés y despensa',d:'Aceite de oliva virgen extra',u:'ud',s:'cons',l:[]},
+ {k:'c-sal-fina',c:'Sueltos',n:'Sal fina',para:'1 unidad',p:0.70,g:'Patés y despensa',d:'Sal fina',u:'ud',s:'cons',l:[]},
+ {k:'c-la-pinsa',c:'Sueltos',n:'La Pinsa',para:'1 unidad',p:3.80,g:'Patés y despensa',d:'La Pinsa',u:'ud',s:'cons',l:[]}
 ];
 var MODOS=[
  {k:'recoger',b:'Recojo en la tienda',g:'con regalo',s:'Avenida de Elche, 1. Preparado a la hora que nos digas, y te llevas un regalo.'},
@@ -953,14 +1014,16 @@ function tarjeta(p,i,nv){
 function pinta(){
   document.getElementById('lista').innerHTML=PACKS.map(function(p,i){return p.c===cat?tarjeta(p,i,false):''}).join('');
 }
-var SGR=[],sg='';
-PACKS.forEach(function(p){if(p.c==='Sueltos'&&SGR.indexOf(p.g)<0)SGR.push(p.g)});sg=SGR[0];
-function pintaSueltos(){
-  var c=document.getElementById('scats');if(!c)return;
-  c.innerHTML=SGR.map(function(g){return '<button class="cat'+(g===sg?' on':'')+'" data-g="'+g+'">'+g+'</button>'}).join('');
-  [].forEach.call(c.querySelectorAll('.cat'),function(b){b.addEventListener('click',function(){sg=b.getAttribute('data-g');pintaSueltos()})});
-  document.getElementById('slista').innerHTML=PACKS.map(function(p,i){
-    if(p.c!=='Sueltos'||p.g!==sg)return '';
+var LST={s:{g:[],on:'',cats:'scats',lista:'slista'},c:{g:[],on:'',cats:'ccats',lista:'clista'}};
+PACKS.forEach(function(p){if(p.c!=='Sueltos')return;var L=LST[p.s==='cons'?'c':'s'];if(L.g.indexOf(p.g)<0)L.g.push(p.g)});
+LST.s.on=LST.s.g[0];LST.c.on=LST.c.g[0];
+function pintaSueltos(){pintaLst('s');pintaLst('c')}
+function pintaLst(t){
+  var L=LST[t],c=document.getElementById(L.cats);if(!c)return;
+  c.innerHTML=L.g.map(function(g){return '<button class="cat'+(g===L.on?' on':'')+'" data-g="'+g+'">'+g+'</button>'}).join('');
+  [].forEach.call(c.querySelectorAll('.cat'),function(b){b.addEventListener('click',function(){L.on=b.getAttribute('data-g');pintaLst(t)})});
+  document.getElementById(L.lista).innerHTML=PACKS.map(function(p,i){
+    if(p.c!=='Sueltos'||p.g!==L.on||(p.s==='cons')!==(t==='c'))return '';
     var pr=p.kg?eur(p.kg)+' <small>/kg</small>':eur(p.p)+' <small>/'+({ud:'ud',pz:'pieza',cu:'cuña'}[p.u])+'</small>';
     return '<div class="srow"><div class="sn">'+p.d+'</div><div class="sp">'+pr+'</div>'
       +'<div class="stepper"><button onclick="menos('+i+')" aria-label="Menos">−</button><span class="q" id="q'+i+'">'+txq(i,cant(i))+'</span>'
